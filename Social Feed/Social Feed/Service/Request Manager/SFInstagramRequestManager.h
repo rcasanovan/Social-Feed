@@ -8,11 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+//__ Instagram Kit
+#import "InstagramMedia.h"
+
+typedef void(^SFInstagramRequestManagerCompletionBlock)(NSArray <InstagramMedia *> *items, BOOL success, NSError *error);
+
 @interface SFInstagramRequestManager : NSObject
 
 + (instancetype)shared;
 - (void)requestPopularMedia;
-- (void)requestSelfFeed;
+- (void)requestSelfFeedOncompletion:(SFInstagramRequestManagerCompletionBlock)completionBlock;
 - (BOOL)isSessionValid;
 - (NSURL *)authorizationURL;
 - (BOOL)receivedValidAccessTokenFromURL:(NSURL *)requestURL;

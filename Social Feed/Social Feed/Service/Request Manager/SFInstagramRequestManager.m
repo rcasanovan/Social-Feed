@@ -39,11 +39,12 @@
     }];
 }
 
-- (void)requestSelfFeed {
-    [self.instagramEngine getSelfFeedWithSuccess:^(NSArray<InstagramMedia *> * _Nonnull media, InstagramPaginationInfo * _Nonnull paginationInfo) {
+- (void)requestSelfFeedOncompletion:(SFInstagramRequestManagerCompletionBlock)completionBlock {
+    [self.instagramEngine getSelfFeedWithCount:20 maxId:self.currentPaginationInfo.nextMaxId success:^(NSArray<InstagramMedia *> * _Nonnull media, InstagramPaginationInfo * _Nonnull paginationInfo) {
         self.currentPaginationInfo = paginationInfo;
+        if (completionBlock) completionBlock(media, YES, nil);
     } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode) {
-        NSLog(@"error");
+        if (completionBlock) completionBlock(nil, NO, error);
     }];
 }
 

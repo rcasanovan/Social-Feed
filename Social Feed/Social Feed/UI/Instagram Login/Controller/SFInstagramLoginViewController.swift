@@ -11,7 +11,7 @@ import UIKit
 class SFInstagramLoginViewController: SFBaseViewController, SFInstagramLoginViewDelegate {
     private var instagramProvider: SFInstagramProvider!
     //__ Private section
-    fileprivate var instagramLoginView : SFInstagramLoginView {
+    private var instagramLoginView : SFInstagramLoginView {
         get {
             return (self.view as? SFInstagramLoginView)!;
         }

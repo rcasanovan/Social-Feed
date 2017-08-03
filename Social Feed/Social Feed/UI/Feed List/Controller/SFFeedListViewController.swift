@@ -8,8 +8,15 @@
 
 import UIKit
 
-class SFFeedListViewController: SFBaseViewController {
+class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
     private var instagramProvider: SFInstagramProvider!
+    //__ Private section
+    private var feedListView : SFFeedListView {
+        get {
+            return (self.view as? SFFeedListView)!;
+        }
+    }
+    private var modelItemsList : [SFItemFeed] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +26,9 @@ class SFFeedListViewController: SFBaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        //__ Configure the view model
+        self.feedListView.delegate = self
+        viewModel()
         self.instagramProvider = SFInstagramProvider()
         self.validateSession()
     }
@@ -28,15 +38,39 @@ class SFFeedListViewController: SFBaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    private func viewModel() {
+        let viewModel = SFFeedListViewModel()
+        viewModel.items = []
+        self.feedListView.viewModel = viewModel;
+    }
+    
     private func validateSession() {
         if (!self.instagramProvider.instagramProviderIsSessionValid()) {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showInstagramLogin"), object: nil, userInfo: nil)
         }
         else {
-            self.instagramProvider.instagramProviderSelfFeed()
+            loadInstragramFeed()
         }
     }
     
+    private func loadInstragramFeed() {
+        self.instagramProvider.instagramProviderSelfFeedOn(completion: { (modelItems: [SFItemFeed], error: ProviderErrorCode) in
+            if (error != ProviderErrorCode.everythingOKCode) {
+                return
+            }
+            
+            self.modelItemsList = self.modelItemsList + modelItems
+            let viewModel : SFFeedListViewModel = self.feedListView.viewModel!
+            viewModel.items = SFFeedViewObject.generateItemObjects(itemObjects: self.modelItemsList)
+            viewModel.allowLoadMoreItems = true
+            self.feedListView.viewModel = viewModel
+        })
+    }
+    
+    //__ SFFeedListViewDelegate
+    func feedListViewDelegateLoadMoreItems() {
+        loadInstragramFeed()
+    }
 
     /*
     // MARK: - Navigation

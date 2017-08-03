@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		28F32E5C60FDF1CDB39690FD /* libPods-Social Feed.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F5DF3F1EDB8F252180ADF6D /* libPods-Social Feed.a */; };
-		C0F8A8A36D57B67D88C0287D /* libPods-Social FeedTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0238CA0E5EA408E3A1672CCB /* libPods-Social FeedTests.a */; };
+		66E53CCB48DF80BB866AE136 /* Pods_Social_FeedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55AF61A3FED9054E5960D03 /* Pods_Social_FeedTests.framework */; };
+		777E95972F4293A70EF895F1 /* Pods_Social_Feed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F7578EF6CA04483A32CB35F /* Pods_Social_Feed.framework */; };
 		C88CD2471F3376E100F630BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CD2461F3376E100F630BE /* AppDelegate.swift */; };
 		C88CD24E1F3376E100F630BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C88CD24D1F3376E100F630BE /* Assets.xcassets */; };
 		C88CD2511F3376E100F630BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C88CD24F1F3376E100F630BE /* LaunchScreen.storyboard */; };
@@ -25,6 +25,31 @@
 		C88CD2901F338CF100F630BE /* SFInstagramLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CD28F1F338CF100F630BE /* SFInstagramLoginViewController.swift */; };
 		C88CD2921F3390AB00F630BE /* SFInstagramLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CD2911F3390AB00F630BE /* SFInstagramLoginView.swift */; };
 		C88CD2951F3390CE00F630BE /* SFBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CD2941F3390CE00F630BE /* SFBaseView.swift */; };
+		C88CD2981F33B15200F630BE /* SFItemFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CD2971F33B15200F630BE /* SFItemFeed.swift */; };
+		C88CD29C1F33B9A200F630BE /* SFInstagramFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CD29A1F33B9A200F630BE /* SFInstagramFeedTableViewCell.swift */; };
+		C88CD29D1F33B9A200F630BE /* SFInstagramFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C88CD29B1F33B9A200F630BE /* SFInstagramFeedTableViewCell.xib */; };
+		C88CD2A01F33B9E600F630BE /* SFFeedViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CD29F1F33B9E600F630BE /* SFFeedViewObject.swift */; };
+		C88CD2BD1F33BB2700F630BE /* DVAArrayDataSourceForTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C88CD2A31F33BB2700F630BE /* DVAArrayDataSourceForTableView.m */; };
+		C88CD2BE1F33BB2700F630BE /* DVAProtocolDataSourceForTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C88CD2A51F33BB2700F630BE /* DVAProtocolDataSourceForTableView.m */; };
+		C88CD2BF1F33BB2700F630BE /* NSArray+DVAPlistModelDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = C88CD2A91F33BB2700F630BE /* NSArray+DVAPlistModelDatasource.m */; };
+		C88CD2C01F33BB2700F630BE /* NSArray+DVATableViewModelDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = C88CD2AB1F33BB2700F630BE /* NSArray+DVATableViewModelDatasource.m */; };
+		C88CD2C11F33BB2700F630BE /* NSDictionary+DVAPlistModelDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = C88CD2AD1F33BB2700F630BE /* NSDictionary+DVAPlistModelDatasource.m */; };
+		C88CD2C21F33BB2700F630BE /* NSDictionary+DVATableViewModelDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = C88CD2AF1F33BB2700F630BE /* NSDictionary+DVATableViewModelDatasource.m */; };
+		C88CD2C31F33BB2700F630BE /* NSDictionary+DVATableViewModelProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = C88CD2B11F33BB2700F630BE /* NSDictionary+DVATableViewModelProtocol.m */; };
+		C88CD2C41F33BB2700F630BE /* DVATableViewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C88CD2B81F33BB2700F630BE /* DVATableViewCellModel.m */; };
+		C88CD2C51F33BB2700F630BE /* DVATableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C88CD2BA1F33BB2700F630BE /* DVATableViewModel.m */; };
+		C88CD2C61F33BB2700F630BE /* DVATableViewSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C88CD2BC1F33BB2700F630BE /* DVATableViewSectionModel.m */; };
+		C88CD3011F33BEC700F630BE /* InstagramEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = C88CD2EC1F33BEC700F630BE /* InstagramEngine.m */; };
+		C88CD3021F33BEC700F630BE /* InstagramKitConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = C88CD2EF1F33BEC700F630BE /* InstagramKitConstants.m */; };
+		C88CD3031F33BEC700F630BE /* InstagramComment.m in Sources */ = {isa = PBXBuildFile; fileRef = C88CD2F21F33BEC700F630BE /* InstagramComment.m */; };
+		C88CD3041F33BEC700F630BE /* InstagramLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = C88CD2F41F33BEC700F630BE /* InstagramLocation.m */; };
+		C88CD3051F33BEC700F630BE /* InstagramMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = C88CD2F61F33BEC700F630BE /* InstagramMedia.m */; };
+		C88CD3061F33BEC700F630BE /* InstagramModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C88CD2F81F33BEC700F630BE /* InstagramModel.m */; };
+		C88CD3071F33BEC700F630BE /* InstagramPaginationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C88CD2FA1F33BEC700F630BE /* InstagramPaginationInfo.m */; };
+		C88CD3081F33BEC700F630BE /* InstagramTag.m in Sources */ = {isa = PBXBuildFile; fileRef = C88CD2FC1F33BEC700F630BE /* InstagramTag.m */; };
+		C88CD3091F33BEC700F630BE /* InstagramUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C88CD2FE1F33BEC700F630BE /* InstagramUser.m */; };
+		C88CD30A1F33BEC700F630BE /* UserInPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = C88CD3001F33BEC700F630BE /* UserInPhoto.m */; };
+		C88CD30C1F33C0EA00F630BE /* SFFeedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CD30B1F33C0EA00F630BE /* SFFeedListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0238CA0E5EA408E3A1672CCB /* libPods-Social FeedTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Social FeedTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F7578EF6CA04483A32CB35F /* Pods_Social_Feed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Social_Feed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B276EC70063C4434BE9504D /* Pods-Social FeedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social FeedTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Social FeedTests/Pods-Social FeedTests.release.xcconfig"; sourceTree = "<group>"; };
-		8F5DF3F1EDB8F252180ADF6D /* libPods-Social Feed.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Social Feed.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6FF61BAF528AB88CDF8AE6A /* Pods-Social FeedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social FeedTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Social FeedTests/Pods-Social FeedTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C88CD2431F3376E100F630BE /* Social Feed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Social Feed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C88CD2461F3376E100F630BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,8 +88,59 @@
 		C88CD28F1F338CF100F630BE /* SFInstagramLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFInstagramLoginViewController.swift; sourceTree = "<group>"; };
 		C88CD2911F3390AB00F630BE /* SFInstagramLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFInstagramLoginView.swift; sourceTree = "<group>"; };
 		C88CD2941F3390CE00F630BE /* SFBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFBaseView.swift; sourceTree = "<group>"; };
+		C88CD2971F33B15200F630BE /* SFItemFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFItemFeed.swift; sourceTree = "<group>"; };
+		C88CD29A1F33B9A200F630BE /* SFInstagramFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFInstagramFeedTableViewCell.swift; sourceTree = "<group>"; };
+		C88CD29B1F33B9A200F630BE /* SFInstagramFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SFInstagramFeedTableViewCell.xib; sourceTree = "<group>"; };
+		C88CD29F1F33B9E600F630BE /* SFFeedViewObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFFeedViewObject.swift; sourceTree = "<group>"; };
+		C88CD2A21F33BB2700F630BE /* DVAArrayDataSourceForTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVAArrayDataSourceForTableView.h; sourceTree = "<group>"; };
+		C88CD2A31F33BB2700F630BE /* DVAArrayDataSourceForTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVAArrayDataSourceForTableView.m; sourceTree = "<group>"; };
+		C88CD2A41F33BB2700F630BE /* DVAProtocolDataSourceForTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVAProtocolDataSourceForTableView.h; sourceTree = "<group>"; };
+		C88CD2A51F33BB2700F630BE /* DVAProtocolDataSourceForTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVAProtocolDataSourceForTableView.m; sourceTree = "<group>"; };
+		C88CD2A81F33BB2700F630BE /* NSArray+DVAPlistModelDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+DVAPlistModelDatasource.h"; sourceTree = "<group>"; };
+		C88CD2A91F33BB2700F630BE /* NSArray+DVAPlistModelDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+DVAPlistModelDatasource.m"; sourceTree = "<group>"; };
+		C88CD2AA1F33BB2700F630BE /* NSArray+DVATableViewModelDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+DVATableViewModelDatasource.h"; sourceTree = "<group>"; };
+		C88CD2AB1F33BB2700F630BE /* NSArray+DVATableViewModelDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+DVATableViewModelDatasource.m"; sourceTree = "<group>"; };
+		C88CD2AC1F33BB2700F630BE /* NSDictionary+DVAPlistModelDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+DVAPlistModelDatasource.h"; sourceTree = "<group>"; };
+		C88CD2AD1F33BB2700F630BE /* NSDictionary+DVAPlistModelDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+DVAPlistModelDatasource.m"; sourceTree = "<group>"; };
+		C88CD2AE1F33BB2700F630BE /* NSDictionary+DVATableViewModelDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+DVATableViewModelDatasource.h"; sourceTree = "<group>"; };
+		C88CD2AF1F33BB2700F630BE /* NSDictionary+DVATableViewModelDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+DVATableViewModelDatasource.m"; sourceTree = "<group>"; };
+		C88CD2B01F33BB2700F630BE /* NSDictionary+DVATableViewModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+DVATableViewModelProtocol.h"; sourceTree = "<group>"; };
+		C88CD2B11F33BB2700F630BE /* NSDictionary+DVATableViewModelProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+DVATableViewModelProtocol.m"; sourceTree = "<group>"; };
+		C88CD2B21F33BB2700F630BE /* DVATableViewCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVATableViewCellProtocol.h; sourceTree = "<group>"; };
+		C88CD2B31F33BB2700F630BE /* DVATableViewModelDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVATableViewModelDatasource.h; sourceTree = "<group>"; };
+		C88CD2B41F33BB2700F630BE /* DVATableViewModelDatasourceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVATableViewModelDatasourceDelegate.h; sourceTree = "<group>"; };
+		C88CD2B51F33BB2700F630BE /* DVATableViewModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVATableViewModelProtocol.h; sourceTree = "<group>"; };
+		C88CD2B71F33BB2700F630BE /* DVATableViewCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVATableViewCellModel.h; sourceTree = "<group>"; };
+		C88CD2B81F33BB2700F630BE /* DVATableViewCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVATableViewCellModel.m; sourceTree = "<group>"; };
+		C88CD2B91F33BB2700F630BE /* DVATableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVATableViewModel.h; sourceTree = "<group>"; };
+		C88CD2BA1F33BB2700F630BE /* DVATableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVATableViewModel.m; sourceTree = "<group>"; };
+		C88CD2BB1F33BB2700F630BE /* DVATableViewSectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVATableViewSectionModel.h; sourceTree = "<group>"; };
+		C88CD2BC1F33BB2700F630BE /* DVATableViewSectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVATableViewSectionModel.m; sourceTree = "<group>"; };
+		C88CD2EB1F33BEC700F630BE /* InstagramEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramEngine.h; sourceTree = "<group>"; };
+		C88CD2EC1F33BEC700F630BE /* InstagramEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramEngine.m; sourceTree = "<group>"; };
+		C88CD2ED1F33BEC700F630BE /* InstagramKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramKit.h; sourceTree = "<group>"; };
+		C88CD2EE1F33BEC700F630BE /* InstagramKitConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramKitConstants.h; sourceTree = "<group>"; };
+		C88CD2EF1F33BEC700F630BE /* InstagramKitConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramKitConstants.m; sourceTree = "<group>"; };
+		C88CD2F11F33BEC700F630BE /* InstagramComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramComment.h; sourceTree = "<group>"; };
+		C88CD2F21F33BEC700F630BE /* InstagramComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramComment.m; sourceTree = "<group>"; };
+		C88CD2F31F33BEC700F630BE /* InstagramLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramLocation.h; sourceTree = "<group>"; };
+		C88CD2F41F33BEC700F630BE /* InstagramLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramLocation.m; sourceTree = "<group>"; };
+		C88CD2F51F33BEC700F630BE /* InstagramMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramMedia.h; sourceTree = "<group>"; };
+		C88CD2F61F33BEC700F630BE /* InstagramMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramMedia.m; sourceTree = "<group>"; };
+		C88CD2F71F33BEC700F630BE /* InstagramModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramModel.h; sourceTree = "<group>"; };
+		C88CD2F81F33BEC700F630BE /* InstagramModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramModel.m; sourceTree = "<group>"; };
+		C88CD2F91F33BEC700F630BE /* InstagramPaginationInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramPaginationInfo.h; sourceTree = "<group>"; };
+		C88CD2FA1F33BEC700F630BE /* InstagramPaginationInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramPaginationInfo.m; sourceTree = "<group>"; };
+		C88CD2FB1F33BEC700F630BE /* InstagramTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramTag.h; sourceTree = "<group>"; };
+		C88CD2FC1F33BEC700F630BE /* InstagramTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramTag.m; sourceTree = "<group>"; };
+		C88CD2FD1F33BEC700F630BE /* InstagramUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramUser.h; sourceTree = "<group>"; };
+		C88CD2FE1F33BEC700F630BE /* InstagramUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramUser.m; sourceTree = "<group>"; };
+		C88CD2FF1F33BEC700F630BE /* UserInPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInPhoto.h; sourceTree = "<group>"; };
+		C88CD3001F33BEC700F630BE /* UserInPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInPhoto.m; sourceTree = "<group>"; };
+		C88CD30B1F33C0EA00F630BE /* SFFeedListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFFeedListView.swift; sourceTree = "<group>"; };
 		C9BBFC0285D9D30C175B28EC /* Pods-Social Feed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social Feed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Social Feed/Pods-Social Feed.debug.xcconfig"; sourceTree = "<group>"; };
 		F3FADA8D04CB750455161E71 /* Pods-Social Feed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social Feed.release.xcconfig"; path = "Pods/Target Support Files/Pods-Social Feed/Pods-Social Feed.release.xcconfig"; sourceTree = "<group>"; };
+		F55AF61A3FED9054E5960D03 /* Pods_Social_FeedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Social_FeedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28F32E5C60FDF1CDB39690FD /* libPods-Social Feed.a in Frameworks */,
+				777E95972F4293A70EF895F1 /* Pods_Social_Feed.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,7 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0F8A8A36D57B67D88C0287D /* libPods-Social FeedTests.a in Frameworks */,
+				66E53CCB48DF80BB866AE136 /* Pods_Social_FeedTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,8 +201,11 @@
 				C88CD26B1F337DDD00F630BE /* Social Feed-Bridging-Header.h */,
 				C88CD2721F33813500F630BE /* Storyboards */,
 				C88CD2751F33817A00F630BE /* UI */,
+				C88CD2961F33B11F00F630BE /* Model */,
 				C88CD26D1F337F5E00F630BE /* Service */,
 				C88CD2861F33893100F630BE /* Router */,
+				C88CD2A11F33BB2700F630BE /* Tables */,
+				C88CD2E91F33BEC700F630BE /* InstagramKit */,
 				C88CD24D1F3376E100F630BE /* Assets.xcassets */,
 				C88CD24F1F3376E100F630BE /* LaunchScreen.storyboard */,
 				C88CD2521F3376E100F630BE /* Info.plist */,
@@ -210,6 +288,9 @@
 		C88CD2781F3381A800F630BE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C88CD2991F33B97F00F630BE /* Cell */,
+				C88CD29E1F33B9B200F630BE /* View Model */,
+				C88CD30B1F33C0EA00F630BE /* SFFeedListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -289,11 +370,135 @@
 			path = "Base View";
 			sourceTree = "<group>";
 		};
+		C88CD2961F33B11F00F630BE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C88CD2971F33B15200F630BE /* SFItemFeed.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C88CD2991F33B97F00F630BE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C88CD29A1F33B9A200F630BE /* SFInstagramFeedTableViewCell.swift */,
+				C88CD29B1F33B9A200F630BE /* SFInstagramFeedTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C88CD29E1F33B9B200F630BE /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				C88CD29F1F33B9E600F630BE /* SFFeedViewObject.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		C88CD2A11F33BB2700F630BE /* Tables */ = {
+			isa = PBXGroup;
+			children = (
+				C88CD2A21F33BB2700F630BE /* DVAArrayDataSourceForTableView.h */,
+				C88CD2A31F33BB2700F630BE /* DVAArrayDataSourceForTableView.m */,
+				C88CD2A41F33BB2700F630BE /* DVAProtocolDataSourceForTableView.h */,
+				C88CD2A51F33BB2700F630BE /* DVAProtocolDataSourceForTableView.m */,
+				C88CD2A61F33BB2700F630BE /* Protocols */,
+				C88CD2B61F33BB2700F630BE /* Subclasses */,
+			);
+			path = Tables;
+			sourceTree = "<group>";
+		};
+		C88CD2A61F33BB2700F630BE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C88CD2A71F33BB2700F630BE /* Categories */,
+				C88CD2B21F33BB2700F630BE /* DVATableViewCellProtocol.h */,
+				C88CD2B31F33BB2700F630BE /* DVATableViewModelDatasource.h */,
+				C88CD2B41F33BB2700F630BE /* DVATableViewModelDatasourceDelegate.h */,
+				C88CD2B51F33BB2700F630BE /* DVATableViewModelProtocol.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		C88CD2A71F33BB2700F630BE /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				C88CD2A81F33BB2700F630BE /* NSArray+DVAPlistModelDatasource.h */,
+				C88CD2A91F33BB2700F630BE /* NSArray+DVAPlistModelDatasource.m */,
+				C88CD2AA1F33BB2700F630BE /* NSArray+DVATableViewModelDatasource.h */,
+				C88CD2AB1F33BB2700F630BE /* NSArray+DVATableViewModelDatasource.m */,
+				C88CD2AC1F33BB2700F630BE /* NSDictionary+DVAPlistModelDatasource.h */,
+				C88CD2AD1F33BB2700F630BE /* NSDictionary+DVAPlistModelDatasource.m */,
+				C88CD2AE1F33BB2700F630BE /* NSDictionary+DVATableViewModelDatasource.h */,
+				C88CD2AF1F33BB2700F630BE /* NSDictionary+DVATableViewModelDatasource.m */,
+				C88CD2B01F33BB2700F630BE /* NSDictionary+DVATableViewModelProtocol.h */,
+				C88CD2B11F33BB2700F630BE /* NSDictionary+DVATableViewModelProtocol.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		C88CD2B61F33BB2700F630BE /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				C88CD2B71F33BB2700F630BE /* DVATableViewCellModel.h */,
+				C88CD2B81F33BB2700F630BE /* DVATableViewCellModel.m */,
+				C88CD2B91F33BB2700F630BE /* DVATableViewModel.h */,
+				C88CD2BA1F33BB2700F630BE /* DVATableViewModel.m */,
+				C88CD2BB1F33BB2700F630BE /* DVATableViewSectionModel.h */,
+				C88CD2BC1F33BB2700F630BE /* DVATableViewSectionModel.m */,
+			);
+			path = Subclasses;
+			sourceTree = "<group>";
+		};
+		C88CD2E91F33BEC700F630BE /* InstagramKit */ = {
+			isa = PBXGroup;
+			children = (
+				C88CD2EA1F33BEC700F630BE /* Engine */,
+				C88CD2ED1F33BEC700F630BE /* InstagramKit.h */,
+				C88CD2EE1F33BEC700F630BE /* InstagramKitConstants.h */,
+				C88CD2EF1F33BEC700F630BE /* InstagramKitConstants.m */,
+				C88CD2F01F33BEC700F630BE /* Models */,
+			);
+			path = InstagramKit;
+			sourceTree = "<group>";
+		};
+		C88CD2EA1F33BEC700F630BE /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				C88CD2EB1F33BEC700F630BE /* InstagramEngine.h */,
+				C88CD2EC1F33BEC700F630BE /* InstagramEngine.m */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		C88CD2F01F33BEC700F630BE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C88CD2F11F33BEC700F630BE /* InstagramComment.h */,
+				C88CD2F21F33BEC700F630BE /* InstagramComment.m */,
+				C88CD2F31F33BEC700F630BE /* InstagramLocation.h */,
+				C88CD2F41F33BEC700F630BE /* InstagramLocation.m */,
+				C88CD2F51F33BEC700F630BE /* InstagramMedia.h */,
+				C88CD2F61F33BEC700F630BE /* InstagramMedia.m */,
+				C88CD2F71F33BEC700F630BE /* InstagramModel.h */,
+				C88CD2F81F33BEC700F630BE /* InstagramModel.m */,
+				C88CD2F91F33BEC700F630BE /* InstagramPaginationInfo.h */,
+				C88CD2FA1F33BEC700F630BE /* InstagramPaginationInfo.m */,
+				C88CD2FB1F33BEC700F630BE /* InstagramTag.h */,
+				C88CD2FC1F33BEC700F630BE /* InstagramTag.m */,
+				C88CD2FD1F33BEC700F630BE /* InstagramUser.h */,
+				C88CD2FE1F33BEC700F630BE /* InstagramUser.m */,
+				C88CD2FF1F33BEC700F630BE /* UserInPhoto.h */,
+				C88CD3001F33BEC700F630BE /* UserInPhoto.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		CA8CF97E73DFD2A04AD547BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8F5DF3F1EDB8F252180ADF6D /* libPods-Social Feed.a */,
-				0238CA0E5EA408E3A1672CCB /* libPods-Social FeedTests.a */,
+				6F7578EF6CA04483A32CB35F /* Pods_Social_Feed.framework */,
+				F55AF61A3FED9054E5960D03 /* Pods_Social_FeedTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -391,6 +596,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C88CD28B1F338CA900F630BE /* Login.storyboard in Resources */,
+				C88CD29D1F33B9A200F630BE /* SFInstagramFeedTableViewCell.xib in Resources */,
 				C88CD2511F3376E100F630BE /* LaunchScreen.storyboard in Resources */,
 				C88CD24E1F3376E100F630BE /* Assets.xcassets in Resources */,
 				C88CD2741F33815E00F630BE /* Feed.storyboard in Resources */,
@@ -504,16 +710,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C88CD3011F33BEC700F630BE /* InstagramEngine.m in Sources */,
 				C88CD27C1F3381FE00F630BE /* SFBaseViewController.swift in Sources */,
+				C88CD2BE1F33BB2700F630BE /* DVAProtocolDataSourceForTableView.m in Sources */,
+				C88CD2C41F33BB2700F630BE /* DVATableViewCellModel.m in Sources */,
+				C88CD3061F33BEC700F630BE /* InstagramModel.m in Sources */,
+				C88CD2C31F33BB2700F630BE /* NSDictionary+DVATableViewModelProtocol.m in Sources */,
+				C88CD3071F33BEC700F630BE /* InstagramPaginationInfo.m in Sources */,
+				C88CD3051F33BEC700F630BE /* InstagramMedia.m in Sources */,
+				C88CD2981F33B15200F630BE /* SFItemFeed.swift in Sources */,
 				C88CD2821F33828D00F630BE /* SFBaseProvider.swift in Sources */,
+				C88CD29C1F33B9A200F630BE /* SFInstagramFeedTableViewCell.swift in Sources */,
+				C88CD2BD1F33BB2700F630BE /* DVAArrayDataSourceForTableView.m in Sources */,
 				C88CD2881F33899E00F630BE /* SFRouterManager.swift in Sources */,
+				C88CD30C1F33C0EA00F630BE /* SFFeedListView.swift in Sources */,
 				C88CD2851F3383F000F630BE /* SFInstagramProvider.swift in Sources */,
+				C88CD2C61F33BB2700F630BE /* DVATableViewSectionModel.m in Sources */,
+				C88CD3091F33BEC700F630BE /* InstagramUser.m in Sources */,
+				C88CD2C11F33BB2700F630BE /* NSDictionary+DVAPlistModelDatasource.m in Sources */,
+				C88CD2C51F33BB2700F630BE /* DVATableViewModel.m in Sources */,
+				C88CD3021F33BEC700F630BE /* InstagramKitConstants.m in Sources */,
+				C88CD2A01F33B9E600F630BE /* SFFeedViewObject.swift in Sources */,
 				C88CD2921F3390AB00F630BE /* SFInstagramLoginView.swift in Sources */,
 				C88CD27E1F33823200F630BE /* SFFeedListViewController.swift in Sources */,
+				C88CD3081F33BEC700F630BE /* InstagramTag.m in Sources */,
+				C88CD30A1F33BEC700F630BE /* UserInPhoto.m in Sources */,
 				C88CD2951F3390CE00F630BE /* SFBaseView.swift in Sources */,
 				C88CD2711F337FD000F630BE /* SFInstagramRequestManager.m in Sources */,
 				C88CD2901F338CF100F630BE /* SFInstagramLoginViewController.swift in Sources */,
+				C88CD3041F33BEC700F630BE /* InstagramLocation.m in Sources */,
+				C88CD2C01F33BB2700F630BE /* NSArray+DVATableViewModelDatasource.m in Sources */,
+				C88CD3031F33BEC700F630BE /* InstagramComment.m in Sources */,
+				C88CD2BF1F33BB2700F630BE /* NSArray+DVAPlistModelDatasource.m in Sources */,
 				C88CD2471F3376E100F630BE /* AppDelegate.swift in Sources */,
+				C88CD2C21F33BB2700F630BE /* NSDictionary+DVATableViewModelDatasource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,6 +875,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C9BBFC0285D9D30C175B28EC /* Pods-Social Feed.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 5753N2Y6RP;
@@ -662,6 +893,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F3FADA8D04CB750455161E71 /* Pods-Social Feed.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 5753N2Y6RP;
@@ -678,7 +910,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C6FF61BAF528AB88CDF8AE6A /* Pods-Social FeedTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Social FeedTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -693,7 +925,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7B276EC70063C4434BE9504D /* Pods-Social FeedTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Social FeedTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

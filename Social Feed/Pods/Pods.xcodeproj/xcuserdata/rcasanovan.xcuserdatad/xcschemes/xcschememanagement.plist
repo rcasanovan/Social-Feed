@@ -9,7 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>InstagramKit.xcscheme</key>
+		<key>HanekeSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -24,35 +24,25 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>UICKeyChainStore.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>05DCD66B8EB8D822274DC8738FB5AA89</key>
+		<key>0DFE4878ACFB6AA839CA0701C674598B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9E033EDB5EC0819481B0546434FA577B</key>
+		<key>7226451B87E5E0614E95CEE1F85BB552</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E1ECB862A4E2B3C73E90B68D5BBA7D3D</key>
+		<key>AE4759774042D8E013517E82C6F7A058</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E35707FB0ACDA7D77776BF1B06BC521A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F8E7A49617321CFE457A3159303F3FBF</key>
+		<key>CF671F7E57B92905F1CC91D036D6B4A7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

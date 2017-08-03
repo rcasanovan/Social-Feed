@@ -8,6 +8,11 @@
 
 import UIKit
 
+enum ProviderErrorCode {
+    case everythingOKCode
+    case serverErrorCode
+}
+
 class SFBaseProvider: NSObject {
     public var instagramRequestManager: SFInstagramRequestManager!;
     
