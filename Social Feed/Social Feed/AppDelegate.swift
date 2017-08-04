@@ -8,6 +8,8 @@
 
 import UIKit
 
+import TwitterKit
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         SFRouterManager.shared.initRouterNotifications()
-        // Override point for customization after application launch.
+        Twitter.sharedInstance().start(withConsumerKey:"zwHB8dUzONJyCXz53OouGbM8o", consumerSecret:"EvHnLDpxLKg38NORZvqowJuwk3Q9Lb0cbTOSuRMzaPFcEuBnd7")
         return true
     }
 

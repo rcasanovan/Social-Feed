@@ -15,10 +15,14 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - HanekeSwift (0.10.1)
+  - TwitterCore (3.0.0)
+  - TwitterKit (3.0.3):
+    - TwitterCore (>= 3.0.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - HanekeSwift (from `https://github.com/Haneke/HanekeSwift.git`, branch `feature/swift-3`)
+  - TwitterKit
 
 EXTERNAL SOURCES:
   HanekeSwift:
@@ -33,7 +37,9 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   HanekeSwift: 4113367892828e7700d24a384027de6ebc79aad1
+  TwitterCore: 8ce250be1eb34633a0e6acc89520d4165ec52c10
+  TwitterKit: 202404be71aadd81d19f677b34579fe77d9cb67e
 
-PODFILE CHECKSUM: 6fdf3bffe8812307e70b5ff7ce71eb619faccad6
+PODFILE CHECKSUM: b17fddeda3ee02eb098955c33da7d4938e751a48
 
 COCOAPODS: 1.2.0
