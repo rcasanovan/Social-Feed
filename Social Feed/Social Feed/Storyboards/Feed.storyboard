@@ -35,6 +35,9 @@
                                             <segment title="Twitter"/>
                                             <segment title="All"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="segmentedControlPressed:" destination="p85-KO-0Ul" eventType="valueChanged" id="f85-1p-pxf"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

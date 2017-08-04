@@ -8,21 +8,51 @@
 
 import UIKit
 
+import TwitterKit
+
+enum FeedSociaNetwork: Int {
+    case instagramSocialNetwork
+    case twitterSocialNetwork
+    case allSocialNetwork
+}
+
 class SFFeedListView: SFBaseView, DVATableViewModelDatasourceDelegate, UITableViewDelegate {
     //__ IBOutlets
-    @IBOutlet weak fileprivate var itemsTableView : UITableView?
+    @IBOutlet weak fileprivate var itemsTableView: UITableView?
     //__ Private section
+    private var twitterLoginButton: TWTRLogInButton?
     private var datasource : DVAProtocolDataSourceForTableView?;
     internal var viewModel:SFFeedListViewModel? {
         didSet {
             if viewModel?.reloadItems == true {
                 configureItemListWith(viewModel: viewModel!)
+                configureTwitterLoginFeedWith(viewModel: viewModel!)
             }
         }
     }
     private let threshold = 50.0 // threshold from bottom of tableView
     private var isLoadingMore = false // flag
     internal var delegate:SFFeedListViewDelegate?
+    
+    private func configureTwitterLoginFeedWith(viewModel: SFFeedListViewModel) {
+        if (!viewModel.showTwitterFeed) {
+            twitterLoginButton?.isHidden = true
+            return
+        }
+        self.itemsTableView?.isHidden = !viewModel.twitterLogged;
+        twitterLoginButton?.isHidden = false
+        if (twitterLoginButton == nil) {
+            twitterLoginButton = TWTRLogInButton(logInCompletion: { session, error in
+                if (session != nil) {
+                    print("signed in as \(String(describing: session?.userName))");
+                } else {
+                    print("error: \(String(describing: error?.localizedDescription))");
+                }
+            })
+            twitterLoginButton?.center = self.center
+            self.addSubview(twitterLoginButton!)
+        }
+    }
     
     private func configureItemListWith(viewModel: SFFeedListViewModel) {
         self.isLoadingMore = !viewModel.allowLoadMoreItems
@@ -78,6 +108,10 @@ class SFFeedListView: SFBaseView, DVATableViewModelDatasourceDelegate, UITableVi
             self.isLoadingMore = true
         }
     }
+    
+    @IBAction func segmentedControlPressed(_ sender: UISegmentedControl) {
+        delegate?.feedListViewDelegateSocialNetworkSelected(socialNetwork: FeedSociaNetwork(rawValue: (sender.selectedSegmentIndex))!)
+    }
 }
 
 //__ View model class
@@ -85,9 +119,14 @@ class SFFeedListViewModel: NSObject {
     var items:[SFFeedViewObject] = [] //__ items
     var reloadItems:Bool = true //__ reload or not the tableview
     var allowLoadMoreItems: Bool = true
+    var instagramLogged: Bool = false
+    var twitterLogged: Bool = false
+    var showInstagramFeed: Bool = false
+    var showTwitterFeed: Bool = false
 }
 
 //__ Delegate method class
 protocol SFFeedListViewDelegate {
     func feedListViewDelegateLoadMoreItems()
+    func feedListViewDelegateSocialNetworkSelected(socialNetwork: FeedSociaNetwork)
 }

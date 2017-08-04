@@ -53,6 +53,20 @@ class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
         }
     }
     
+    private func showInstagramFeed() {
+        let viewModel : SFFeedListViewModel = self.feedListView.viewModel!
+        viewModel.showInstagramFeed = true
+        viewModel.showTwitterFeed = false
+        self.feedListView.viewModel = viewModel
+    }
+    
+    private func showTwitterFeed() {
+        let viewModel : SFFeedListViewModel = self.feedListView.viewModel!
+        viewModel.showTwitterFeed = true
+        viewModel.showInstagramFeed = false
+        self.feedListView.viewModel = viewModel
+    }
+    
     private func loadInstragramFeed() {
         self.instagramProvider.instagramProviderSelfFeedOn(completion: { (modelItems: [SFItemFeed], error: ProviderErrorCode) in
             if (error != ProviderErrorCode.everythingOKCode) {
@@ -70,6 +84,17 @@ class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
     //__ SFFeedListViewDelegate
     func feedListViewDelegateLoadMoreItems() {
         loadInstragramFeed()
+    }
+    
+    func feedListViewDelegateSocialNetworkSelected(socialNetwork: FeedSociaNetwork) {
+        switch socialNetwork {
+        case FeedSociaNetwork.instagramSocialNetwork:
+            showInstagramFeed()
+        case FeedSociaNetwork.twitterSocialNetwork:
+            showTwitterFeed()
+        default:
+            print("all")
+        }
     }
 
     /*
