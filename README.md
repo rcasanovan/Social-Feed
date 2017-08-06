@@ -9,6 +9,7 @@ This is a sample to get Social Feed with Objective C / Swift 3 integration
 
 ## Screenshots
 ![alt tag](https://github.com/rcasanovan/Social-Feed/blob/master/presentation/images/01.png?raw=true)
+![alt tag](https://github.com/rcasanovan/Social-Feed/blob/master/presentation/images/02.png?raw=true)
 
 ## Development tools
 
