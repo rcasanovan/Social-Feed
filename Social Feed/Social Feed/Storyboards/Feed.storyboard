@@ -74,20 +74,46 @@
                                     <action selector="instagramLoginButtonPressed:" destination="p85-KO-0Ul" eventType="touchUpInside" id="1QG-nk-39s"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nDY-U4-HDo">
+                                <rect key="frame" x="0.0" y="114" width="375" height="553"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dslfjsdklfj kljsdlkf jdklfj lkdsjf lksdjflksd j flksdjfkl sjdkfl jsdlkf jsdlk fsdf sdf dfdfdf" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pah-hO-aYK">
+                                        <rect key="frame" x="8" y="8" width="359" height="230"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="230" id="RWj-6N-dOk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="pah-hO-aYK" firstAttribute="top" secondItem="nDY-U4-HDo" secondAttribute="top" constant="8" id="44m-an-C0O"/>
+                                    <constraint firstAttribute="trailing" secondItem="pah-hO-aYK" secondAttribute="trailing" constant="8" id="CPq-p3-4Vn"/>
+                                    <constraint firstItem="pah-hO-aYK" firstAttribute="leading" secondItem="nDY-U4-HDo" secondAttribute="leading" constant="8" id="jwd-OZ-7RM"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="qnO-nx-5Ed" firstAttribute="top" secondItem="Bjt-3O-ewb" secondAttribute="bottom" id="3E3-vF-s9I"/>
+                            <constraint firstItem="OOZ-IQ-Dk6" firstAttribute="top" secondItem="nDY-U4-HDo" secondAttribute="bottom" id="8qY-Dv-1oD"/>
                             <constraint firstItem="pwv-Ch-xcC" firstAttribute="centerX" secondItem="p85-KO-0Ul" secondAttribute="centerX" id="Glx-M3-GFl"/>
                             <constraint firstItem="Bjt-3O-ewb" firstAttribute="top" secondItem="4Oq-VB-l5W" secondAttribute="bottom" id="JxG-e5-AHh"/>
+                            <constraint firstAttribute="trailing" secondItem="nDY-U4-HDo" secondAttribute="trailing" id="MYw-fC-U5d"/>
+                            <constraint firstItem="nDY-U4-HDo" firstAttribute="leading" secondItem="p85-KO-0Ul" secondAttribute="leading" id="SNT-rA-ecC"/>
                             <constraint firstItem="OOZ-IQ-Dk6" firstAttribute="top" secondItem="qnO-nx-5Ed" secondAttribute="bottom" id="Skt-U7-rOT"/>
                             <constraint firstItem="Bjt-3O-ewb" firstAttribute="leading" secondItem="p85-KO-0Ul" secondAttribute="leading" id="gZY-Ew-ErF"/>
                             <constraint firstAttribute="trailing" secondItem="Bjt-3O-ewb" secondAttribute="trailing" id="rT0-Tr-N0T"/>
+                            <constraint firstItem="nDY-U4-HDo" firstAttribute="top" secondItem="Bjt-3O-ewb" secondAttribute="bottom" id="rf6-3k-F8E"/>
                             <constraint firstItem="qnO-nx-5Ed" firstAttribute="leading" secondItem="p85-KO-0Ul" secondAttribute="leading" id="tWs-Lt-Q4a"/>
                             <constraint firstAttribute="trailing" secondItem="qnO-nx-5Ed" secondAttribute="trailing" id="u1k-Av-UOV"/>
                             <constraint firstItem="pwv-Ch-xcC" firstAttribute="centerY" secondItem="p85-KO-0Ul" secondAttribute="centerY" id="zde-TK-IvD"/>
                         </constraints>
                         <connections>
+                            <outlet property="allFeedNotLoginTitleLabel" destination="pah-hO-aYK" id="tpn-Jw-VpP"/>
+                            <outlet property="allFeedNotLoginView" destination="nDY-U4-HDo" id="Ikc-DN-h2F"/>
                             <outlet property="instagramLoginButton" destination="pwv-Ch-xcC" id="fOi-v7-Gq2"/>
                             <outlet property="itemsTableView" destination="JmW-0F-wFc" id="Gmg-v3-JKE"/>
                         </connections>

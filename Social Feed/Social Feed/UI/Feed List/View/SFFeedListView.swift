@@ -20,6 +20,8 @@ class SFFeedListView: SFBaseView, DVATableViewModelDatasourceDelegate, UITableVi
     //__ IBOutlets
     @IBOutlet weak fileprivate var itemsTableView: UITableView?
     @IBOutlet weak fileprivate var instagramLoginButton: UIButton?
+    @IBOutlet weak fileprivate var allFeedNotLoginView: UIView?
+    @IBOutlet weak fileprivate var allFeedNotLoginTitleLabel: UILabel?
     //__ Private section
     private var twitterLoginButton: TWTRLogInButton?
     private var datasource : DVAProtocolDataSourceForTableView?;
@@ -29,6 +31,7 @@ class SFFeedListView: SFBaseView, DVATableViewModelDatasourceDelegate, UITableVi
                 configureItemListWith(viewModel: viewModel!)
                 configureInstagramLoginWith(viewModel: viewModel!)
                 configureTwitterLoginFeedWith(viewModel: viewModel!)
+                configureAllFeddNotLoginWith(viewModel: viewModel!)
             }
         }
     }
@@ -37,19 +40,16 @@ class SFFeedListView: SFBaseView, DVATableViewModelDatasourceDelegate, UITableVi
     internal var delegate:SFFeedListViewDelegate?
     
     private func configureInstagramLoginWith(viewModel: SFFeedListViewModel) {
-//        if (!viewModel.showInstagramFeed) {
-//            instagramLoginButton?.isHidden = true
-//            return
-//        }
-        instagramLoginButton?.isHidden = viewModel.instagramLogged || viewModel.showTwitterFeed
+        instagramLoginButton?.isHidden = viewModel.showAllFeed || viewModel.instagramLogged || viewModel.showTwitterFeed
     }
     
     private func configureTwitterLoginFeedWith(viewModel: SFFeedListViewModel) {
-//        if (!viewModel.showTwitterFeed) {
-//            twitterLoginButton?.isHidden = true
-//            return
-//        }
-        twitterLoginButton?.isHidden = viewModel.twitterLogged || viewModel.showInstagramFeed
+        twitterLoginButton?.isHidden = viewModel.showAllFeed || viewModel.twitterLogged || viewModel.showInstagramFeed
+    }
+    
+    private func configureAllFeddNotLoginWith(viewModel: SFFeedListViewModel) {
+        allFeedNotLoginTitleLabel?.text = viewModel.noLoginMessage
+        allFeedNotLoginView?.isHidden = viewModel.showInstagramFeed || viewModel.showTwitterFeed || viewModel.instagramLogged || viewModel.twitterLogged
     }
     
     private func configureItemListWith(viewModel: SFFeedListViewModel) {
@@ -67,13 +67,15 @@ class SFFeedListView: SFBaseView, DVATableViewModelDatasourceDelegate, UITableVi
     override func awakeFromNib() {
         super.awakeFromNib()
         //__ Configure view
-        setupLoginButtons()
         setupView()
     }
     
     private func setupView() {
         //__ Configure UI
         self.backgroundColor = UIColor.white
+        
+        setupLoginButtons()
+        
         //__ Setup the data source
         setupDataSource()
     }
@@ -159,6 +161,8 @@ class SFFeedListViewModel: NSObject {
     var twitterLogged: Bool = false
     var showInstagramFeed: Bool = false
     var showTwitterFeed: Bool = false
+    var showAllFeed: Bool = false
+    var noLoginMessage: String = ""
 }
 
 //__ Delegate method class

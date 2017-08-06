@@ -23,10 +23,13 @@ class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
     private var twitterModelItemsList : [SFItemFeed] = []
     private var isShowingInstagramFeed: Bool!
     private var isShowingTwitterFeed: Bool!
+    private var isShowingAllFeed: Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.isShowingInstagramFeed = true
+        self.isShowingTwitterFeed = false
+        self.isShowingAllFeed = false
         self.instagramProvider = SFInstagramProvider()
         self.twitterProvider = SFTwitterProvider()
         //__ Configure the view model
@@ -34,31 +37,35 @@ class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
         viewModel()
         
         NotificationCenter.default.addObserver(self, selector: #selector(instagramSessionChanged), name: NSNotification.Name.InstagramKitUserAuthenticationChanged, object: nil)
-        
         validateInstragramLogged()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         configureNavigationBar()
+        if isShowingTwitterFeed {
+            validateTwitterLogged()
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     private func configureNavigationBar() {
         if (self.instagramProvider.instagramProviderIsSessionValid() ||
             self.twitterProvider.twitterProviderIsSessionValid()) {
         let logoutButton = UIButton(type: .custom)
-        logoutButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        logoutButton.frame = CGRect(x: 0.0, y: 0.0, width: 80.0, height: 30.0)
         logoutButton.setTitleColor(UIColor.black, for: UIControlState.normal)
-        logoutButton.setTitle("bt1", for: UIControlState.normal)
+        logoutButton.setTitle("Session", for: UIControlState.normal)
         logoutButton.addTarget(self, action: #selector(showLogoutOptions), for: .touchUpInside)
         let logoutItem = UIBarButtonItem(customView: logoutButton)
         
         self.navigationItem.setRightBarButton(logoutItem, animated: true)
+        }
+        else {
+            self.navigationItem.rightBarButtonItem = nil
         }
     }
     
@@ -69,6 +76,7 @@ class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
         viewModel.showTwitterFeed = false
         viewModel.instagramLogged = self.instagramProvider.instagramProviderIsSessionValid()
         viewModel.twitterLogged = self.twitterProvider.twitterProviderIsSessionValid()
+        viewModel.noLoginMessage = "Mensaje de prueba, test"
         self.feedListView.viewModel = viewModel;
     }
     
@@ -90,14 +98,19 @@ class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
         let cancelAction = UIAlertAction(title: "Cancel",
                                          style: .cancel, handler: nil)
         
-        alert.addAction(logoutInstagramAction)
-        alert.addAction(logoutTwitterAction)
+        if self.instagramProvider.instagramProviderIsSessionValid() {
+            alert.addAction(logoutInstagramAction)
+        }
+        if self.twitterProvider.twitterProviderIsSessionValid() {
+            alert.addAction(logoutTwitterAction)
+        }
         alert.addAction(cancelAction)
         self.present(alert, animated: true, completion: nil)
     }
     
     private func logoutInstragram() {
         self.instagramProvider.instagramProviderLogout()
+        configureNavigationBar()
         self.modelItemsList = []
         let viewModel : SFFeedListViewModel = self.feedListView.viewModel!
         viewModel.instagramLogged = self.instagramProvider.instagramProviderIsSessionValid()
@@ -110,6 +123,7 @@ class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
     
     private func logoutTwitter() {
         self.twitterProvider.twitterProviderLogout()
+        configureNavigationBar()
         self.twitterModelItemsList = []
         let viewModel : SFFeedListViewModel = self.feedListView.viewModel!
         viewModel.instagramLogged = self.instagramProvider.instagramProviderIsSessionValid()
@@ -134,8 +148,14 @@ class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
     }
     
     private func validateInstragramLogged() {
-        if (self.instagramProvider.instagramProviderIsSessionValid()) {
+        if self.instagramProvider.instagramProviderIsSessionValid() {
             loadInstragramFeed()
+        }
+    }
+    
+    @objc private func validateTwitterLogged() {
+        if self.twitterProvider.twitterProviderIsSessionValid() {
+            loadTwitterFeed()
         }
     }
     
@@ -143,6 +163,7 @@ class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
         let viewModel : SFFeedListViewModel = self.feedListView.viewModel!
         viewModel.showInstagramFeed = true
         viewModel.showTwitterFeed = false
+        viewModel.showAllFeed = false
         viewModel.instagramLogged = self.instagramProvider.instagramProviderIsSessionValid()
         viewModel.twitterLogged = self.twitterProvider.twitterProviderIsSessionValid()
         viewModel.items = SFFeedViewObject.generateItemObjects(itemObjects: self.modelItemsList)
@@ -158,8 +179,9 @@ class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
         let allFeed = self.modelItemsList + self.twitterModelItemsList
         viewModel.items = SFFeedViewObject.generateItemObjects(itemObjects: allFeed.sorted(by: {$0.createdDate! > $1.createdDate!}))
         viewModel.allowLoadMoreItems = true
-        viewModel.showInstagramFeed = true
+        viewModel.showInstagramFeed = false
         viewModel.showTwitterFeed = false
+        viewModel.showAllFeed = true
         viewModel.instagramLogged = self.instagramProvider.instagramProviderIsSessionValid()
         viewModel.twitterLogged = self.twitterProvider.twitterProviderIsSessionValid()
         self.feedListView.viewModel = viewModel
@@ -190,6 +212,7 @@ class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
             viewModel.allowLoadMoreItems = true
             viewModel.showInstagramFeed = false
             viewModel.showTwitterFeed = true
+            viewModel.showAllFeed = false
             viewModel.instagramLogged = self.instagramProvider.instagramProviderIsSessionValid()
             viewModel.twitterLogged = self.twitterProvider.twitterProviderIsSessionValid()
             self.feedListView.viewModel = viewModel
@@ -207,6 +230,7 @@ class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
             viewModel.allowLoadMoreItems = true
             viewModel.showInstagramFeed = false
             viewModel.showTwitterFeed = true
+            viewModel.showAllFeed = false
             viewModel.instagramLogged = self.instagramProvider.instagramProviderIsSessionValid()
             viewModel.twitterLogged = self.twitterProvider.twitterProviderIsSessionValid()
             self.feedListView.viewModel = viewModel
@@ -227,12 +251,17 @@ class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
         case FeedSociaNetwork.instagramSocialNetwork:
             isShowingInstagramFeed = true
             isShowingTwitterFeed = false
+            isShowingAllFeed = false
             showInstagramFeed()
         case FeedSociaNetwork.twitterSocialNetwork:
             isShowingInstagramFeed = false
             isShowingTwitterFeed = true
+            isShowingAllFeed = false
             showTwitterFeed()
         default:
+            isShowingInstagramFeed = false
+            isShowingTwitterFeed = false
+            isShowingAllFeed = true
             showAllFeed()
         }
     }

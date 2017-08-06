@@ -11,6 +11,7 @@ import UIKit
 class SFInstagramLoginView: SFBaseView, UIWebViewDelegate {
     //__ IBOutlets
     @IBOutlet weak var loginWebView : UIWebView?
+    @IBOutlet weak var cancelButton : UIButton?
     //__ Internal section
     internal var delegate:SFInstagramLoginViewDelegate?
     internal var viewModel:SFInstagramLoginViewModel? {
@@ -27,6 +28,9 @@ class SFInstagramLoginView: SFBaseView, UIWebViewDelegate {
     }
     
     private func setupView() {
+        cancelButton?.backgroundColor = UIColor.red
+        cancelButton?.setTitle("Cancelar", for: UIControlState.normal)
+        
         self.loginWebView?.delegate = self
         self.loginWebView?.scrollView.bounces = false
     }
@@ -39,6 +43,10 @@ class SFInstagramLoginView: SFBaseView, UIWebViewDelegate {
         delegate?.instagramLoginViewDelegateAuthenticationSuccess(url: request.url! as NSURL)
         return true
     }
+    
+    @IBAction func cancelButtonPressed(_ sender: UIButton) {
+        delegate?.instagramLoginViewDelegateCancel()
+    }
 }
 
 //__ View model class
@@ -48,6 +56,7 @@ class SFInstagramLoginViewModel: NSObject {
 
 //__ Delegate method class
 protocol SFInstagramLoginViewDelegate {
+    func instagramLoginViewDelegateCancel()
     func instagramLoginViewDelegateAuthenticationSuccess(url: NSURL)
 }
 

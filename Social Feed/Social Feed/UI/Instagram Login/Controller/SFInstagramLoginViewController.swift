@@ -45,4 +45,9 @@ class SFInstagramLoginViewController: SFBaseViewController, SFInstagramLoginView
             })
         }
     }
+    
+    func instagramLoginViewDelegateCancel() {
+        self.dismiss(animated: true, completion: {
+        })
+    }
 }

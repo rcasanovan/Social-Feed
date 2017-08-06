@@ -59,5 +59,6 @@ class SFTwitterProvider: SFBaseProvider {
     
     public func twitterProviderLogout() {
         Twitter.sharedInstance().sessionStore.logOutUserID((Twitter.sharedInstance().sessionStore.session()?.userID)!)
+        lasItemId = 0
     }
 }
