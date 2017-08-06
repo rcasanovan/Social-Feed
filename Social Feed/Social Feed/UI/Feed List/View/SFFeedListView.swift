@@ -56,6 +56,10 @@ class SFFeedListView: SFBaseView, DVATableViewModelDatasourceDelegate, UITableVi
     }
     
     private func configureItemListWith(viewModel: SFFeedListViewModel) {
+        if viewModel.showResultsFromBegining {
+            self.itemsTableView?.setContentOffset(CGPoint.zero, animated: false)
+            viewModel.showResultsFromBegining = false
+        }
         self.itemsTableView?.isHidden = !viewModel.showInstagramFeed && !viewModel.showTwitterFeed
         self.isLoadingMore = !viewModel.allowLoadMoreItems
         if viewModel.reloadItems == true {
@@ -156,7 +160,7 @@ class SFFeedListView: SFBaseView, DVATableViewModelDatasourceDelegate, UITableVi
         let contentOffset = scrollView.contentOffset.y
         let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height;
         
-        if !isLoadingMore && (maximumOffset - contentOffset <= CGFloat(threshold)) {
+        if ((viewModel?.showTwitterFeed)! || (viewModel?.showAllFeed)!) && !isLoadingMore && (maximumOffset - contentOffset <= CGFloat(threshold)) {
             delegate?.feedListViewDelegateLoadMoreItems()
             self.isLoadingMore = true
         }
@@ -186,6 +190,7 @@ class SFFeedListViewModel: NSObject {
     var showTwitterFeed: Bool = false
     var showAllFeed: Bool = false
     var noLoginMessage: String = ""
+    var showResultsFromBegining: Bool = false
 }
 
 //__ Delegate method class

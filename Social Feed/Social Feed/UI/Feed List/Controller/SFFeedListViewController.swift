@@ -188,7 +188,7 @@ class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
     //__ Method to validate if the user is logged into twitter
     @objc private func validateTwitterLogged() {
         if self.twitterProvider.twitterProviderIsSessionValid() {
-            loadTwitterFeed()
+            loadTwitterFeed(showResultsFromBegining: true)
         }
     }
     
@@ -201,12 +201,13 @@ class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
         viewModel.instagramLogged = self.instagramProvider.instagramProviderIsSessionValid()
         viewModel.twitterLogged = self.twitterProvider.twitterProviderIsSessionValid()
         viewModel.items = SFFeedViewObject.generateItemObjects(itemObjects: self.instagramModelItemsList)
+        viewModel.showResultsFromBegining = true
         self.feedListView.viewModel = viewModel
     }
     
     //__ Show twitter feed list
     private func showTwitterFeed() {
-        loadTwitterFeed()
+        loadTwitterFeed(showResultsFromBegining: true)
     }
     
     //__ Show all feed list
@@ -222,6 +223,7 @@ class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
         viewModel.showAllFeed = true
         viewModel.instagramLogged = self.instagramProvider.instagramProviderIsSessionValid()
         viewModel.twitterLogged = self.twitterProvider.twitterProviderIsSessionValid()
+        viewModel.showResultsFromBegining = true
         self.feedListView.viewModel = viewModel
     }
     
@@ -245,7 +247,7 @@ class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
     }
     
     //__ Method to load Twitter feed
-    public func loadTwitterFeed() {
+    public func loadTwitterFeed(showResultsFromBegining: Bool) {
         //__ User is not logged? -> Clear list for Twitter feed
         if !self.twitterProvider.twitterProviderIsSessionValid() {
             let viewModel : SFFeedListViewModel = self.feedListView.viewModel!
@@ -256,6 +258,7 @@ class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
             viewModel.showAllFeed = false
             viewModel.instagramLogged = self.instagramProvider.instagramProviderIsSessionValid()
             viewModel.twitterLogged = self.twitterProvider.twitterProviderIsSessionValid()
+            viewModel.showResultsFromBegining = showResultsFromBegining
             self.feedListView.viewModel = viewModel
             return
         }
@@ -288,7 +291,7 @@ class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
     
     //__ Method to capture load more items event
     func feedListViewDelegateLoadMoreItems() {
-        loadTwitterFeed()
+        loadTwitterFeed(showResultsFromBegining: false)
     }
     
     //__ Method to capture social network selection (Instagram, Twitter, All)

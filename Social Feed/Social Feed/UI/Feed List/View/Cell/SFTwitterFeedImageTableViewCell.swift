@@ -22,6 +22,7 @@ class SFTwitterFeedImageTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupViewCell()
     }
     
     override func prepareForReuse() {
@@ -35,8 +36,10 @@ class SFTwitterFeedImageTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
+    }
+    
+    private func setupViewCell() {
+        self.selectionStyle = UITableViewCellSelectionStyle.none
     }
     
     func heightForItem(text: String, font: UIFont) -> CGFloat {
