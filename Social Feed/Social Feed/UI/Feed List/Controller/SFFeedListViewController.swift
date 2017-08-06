@@ -8,8 +8,11 @@
 
 import UIKit
 
+import TwitterKit
+
 class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
     private var instagramProvider: SFInstagramProvider!
+    private var twitterProvider: SFTwitterProvider!
     //__ Private section
     private var feedListView : SFFeedListView {
         get {
@@ -17,20 +20,25 @@ class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
         }
     }
     private var modelItemsList : [SFItemFeed] = []
+    private var twitterModelItemsList : [SFItemFeed] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.instagramProvider = SFInstagramProvider()
+        self.twitterProvider = SFTwitterProvider()
+        //__ Configure the view model
+        self.feedListView.delegate = self
+        viewModel()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.validateInstagramSession), name: NSNotification.Name.InstagramKitUserAuthenticationChanged, object: nil)
         
         //self.instagramProvider.instagramProviderPopularMedia()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //__ Configure the view model
-        self.feedListView.delegate = self
-        viewModel()
-        self.instagramProvider = SFInstagramProvider()
-        self.validateSession()
+        
+        //validateInstagramSession()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,10 +49,14 @@ class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
     private func viewModel() {
         let viewModel = SFFeedListViewModel()
         viewModel.items = []
+        viewModel.showInstagramFeed = true
+        viewModel.showTwitterFeed = false
+        viewModel.instagramLogged = self.instagramProvider.instagramProviderIsSessionValid()
+        viewModel.twitterLogged = self.twitterProvider.twitterProviderIsSessionValid()
         self.feedListView.viewModel = viewModel;
     }
     
-    private func validateSession() {
+    @objc private func validateInstagramSession() {
         if (!self.instagramProvider.instagramProviderIsSessionValid()) {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showInstagramLogin"), object: nil, userInfo: nil)
         }
@@ -57,14 +69,14 @@ class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
         let viewModel : SFFeedListViewModel = self.feedListView.viewModel!
         viewModel.showInstagramFeed = true
         viewModel.showTwitterFeed = false
+        viewModel.instagramLogged = self.instagramProvider.instagramProviderIsSessionValid()
+        viewModel.twitterLogged = self.twitterProvider.twitterProviderIsSessionValid()
+        viewModel.items = SFFeedViewObject.generateItemObjects(itemObjects: self.modelItemsList)
         self.feedListView.viewModel = viewModel
     }
     
     private func showTwitterFeed() {
-        let viewModel : SFFeedListViewModel = self.feedListView.viewModel!
-        viewModel.showTwitterFeed = true
-        viewModel.showInstagramFeed = false
-        self.feedListView.viewModel = viewModel
+        loadTwitterFeed()
     }
     
     private func loadInstragramFeed() {
@@ -77,11 +89,37 @@ class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
             let viewModel : SFFeedListViewModel = self.feedListView.viewModel!
             viewModel.items = SFFeedViewObject.generateItemObjects(itemObjects: self.modelItemsList)
             viewModel.allowLoadMoreItems = true
+            viewModel.showInstagramFeed = true
+            viewModel.showTwitterFeed = false
+            viewModel.instagramLogged = self.instagramProvider.instagramProviderIsSessionValid()
+            viewModel.twitterLogged = self.twitterProvider.twitterProviderIsSessionValid()
             self.feedListView.viewModel = viewModel
         })
     }
     
+    public func loadTwitterFeed() {
+        self.twitterProvider.twitterProviderSelfFeedOn { (modelItems: [SFItemFeed]?, error: ProviderErrorCode) in
+            if (error != ProviderErrorCode.everythingOKCode) {
+                return
+            }
+            
+            self.twitterModelItemsList = self.twitterModelItemsList + modelItems!
+            let viewModel : SFFeedListViewModel = self.feedListView.viewModel!
+            viewModel.items = SFFeedViewObject.generateItemObjects(itemObjects: self.twitterModelItemsList)
+            viewModel.allowLoadMoreItems = true
+            viewModel.showInstagramFeed = false
+            viewModel.showTwitterFeed = true
+            viewModel.instagramLogged = self.instagramProvider.instagramProviderIsSessionValid()
+            viewModel.twitterLogged = self.twitterProvider.twitterProviderIsSessionValid()
+            self.feedListView.viewModel = viewModel
+        }
+    }
+    
     //__ SFFeedListViewDelegate
+    func feedListViewDelegateInstagramLogin() {
+        validateInstagramSession()
+    }
+    
     func feedListViewDelegateLoadMoreItems() {
         loadInstragramFeed()
     }
@@ -96,15 +134,4 @@ class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
             print("all")
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

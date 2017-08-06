@@ -15,8 +15,10 @@ enum ProviderErrorCode {
 
 class SFBaseProvider: NSObject {
     public var instagramRequestManager: SFInstagramRequestManager!;
+    public var twitterRequestManager: SFTwitterRequestManager!;
     
     override init() {
         self.instagramRequestManager = SFInstagramRequestManager.shared()
+        self.twitterRequestManager = SFTwitterRequestManager.shared
     }
 }

@@ -19,6 +19,7 @@ enum FeedSociaNetwork: Int {
 class SFFeedListView: SFBaseView, DVATableViewModelDatasourceDelegate, UITableViewDelegate {
     //__ IBOutlets
     @IBOutlet weak fileprivate var itemsTableView: UITableView?
+    @IBOutlet weak fileprivate var instagramLoginButton: UIButton?
     //__ Private section
     private var twitterLoginButton: TWTRLogInButton?
     private var datasource : DVAProtocolDataSourceForTableView?;
@@ -26,6 +27,7 @@ class SFFeedListView: SFBaseView, DVATableViewModelDatasourceDelegate, UITableVi
         didSet {
             if viewModel?.reloadItems == true {
                 configureItemListWith(viewModel: viewModel!)
+                configureInstagramLoginWith(viewModel: viewModel!)
                 configureTwitterLoginFeedWith(viewModel: viewModel!)
             }
         }
@@ -34,27 +36,24 @@ class SFFeedListView: SFBaseView, DVATableViewModelDatasourceDelegate, UITableVi
     private var isLoadingMore = false // flag
     internal var delegate:SFFeedListViewDelegate?
     
+    private func configureInstagramLoginWith(viewModel: SFFeedListViewModel) {
+//        if (!viewModel.showInstagramFeed) {
+//            instagramLoginButton?.isHidden = true
+//            return
+//        }
+        instagramLoginButton?.isHidden = viewModel.instagramLogged || viewModel.showTwitterFeed
+    }
+    
     private func configureTwitterLoginFeedWith(viewModel: SFFeedListViewModel) {
-        if (!viewModel.showTwitterFeed) {
-            twitterLoginButton?.isHidden = true
-            return
-        }
-        self.itemsTableView?.isHidden = !viewModel.twitterLogged;
-        twitterLoginButton?.isHidden = false
-        if (twitterLoginButton == nil) {
-            twitterLoginButton = TWTRLogInButton(logInCompletion: { session, error in
-                if (session != nil) {
-                    print("signed in as \(String(describing: session?.userName))");
-                } else {
-                    print("error: \(String(describing: error?.localizedDescription))");
-                }
-            })
-            twitterLoginButton?.center = self.center
-            self.addSubview(twitterLoginButton!)
-        }
+//        if (!viewModel.showTwitterFeed) {
+//            twitterLoginButton?.isHidden = true
+//            return
+//        }
+        twitterLoginButton?.isHidden = viewModel.twitterLogged || viewModel.showInstagramFeed
     }
     
     private func configureItemListWith(viewModel: SFFeedListViewModel) {
+        self.itemsTableView?.isHidden = !viewModel.showInstagramFeed && !viewModel.showTwitterFeed
         self.isLoadingMore = !viewModel.allowLoadMoreItems
         if viewModel.reloadItems == true {
             self.datasource?.viewModelDataSource = viewModel.items as DVATableViewModelDatasource
@@ -68,6 +67,7 @@ class SFFeedListView: SFBaseView, DVATableViewModelDatasourceDelegate, UITableVi
     override func awakeFromNib() {
         super.awakeFromNib()
         //__ Configure view
+        setupLoginButtons()
         setupView()
     }
     
@@ -78,11 +78,33 @@ class SFFeedListView: SFBaseView, DVATableViewModelDatasourceDelegate, UITableVi
         setupDataSource()
     }
     
+    private func setupLoginButtons() {
+        instagramLoginButton?.clipsToBounds = true
+        instagramLoginButton?.layer.cornerRadius = 4.0
+        instagramLoginButton?.backgroundColor = UIColor.orange
+        instagramLoginButton?.setTitle("Login con Instgram", for: UIControlState.normal)
+        
+        if (twitterLoginButton == nil) {
+            twitterLoginButton = TWTRLogInButton(logInCompletion: { session, error in
+                if (session != nil) {
+                    print("signed in as \(String(describing: session?.userName))");
+                } else {
+                    print("error: \(String(describing: error?.localizedDescription))");
+                }
+            })
+            twitterLoginButton?.center = self.center
+            self.addSubview(twitterLoginButton!)
+            twitterLoginButton?.isHidden = true
+        }
+    }
+    
     private func setupDataSource() {
         //__ The delegate is self
         self.itemsTableView?.delegate = self
         //__ Register the cell
         self.itemsTableView?.register(UINib(nibName: "SFInstagramFeedTableViewCell", bundle: nil), forCellReuseIdentifier: "SFInstagramFeedTableViewCell")
+        self.itemsTableView?.register(UINib(nibName: "SFTwitterFeedTableViewCell", bundle: nil), forCellReuseIdentifier: "SFTwitterFeedTableViewCell")
+        self.itemsTableView?.register(UINib(nibName: "SFTwitterFeedImageTableViewCell", bundle: nil), forCellReuseIdentifier: "SFTwitterFeedImageTableViewCell")
         //__ Remove empty separator lines
         let tableView =  UIView(frame: CGRect.zero)
         self.itemsTableView!.tableFooterView = tableView
@@ -95,6 +117,16 @@ class SFFeedListView: SFBaseView, DVATableViewModelDatasourceDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let item = self.viewModel?.items[indexPath.row]
+        if (item != nil) {
+            if item?.itemType == ItemFeedType.instagramFeedType {
+                return 500.0
+            }
+            if item?.itemType == ItemFeedType.twitterFeedType && item?.itemImageURL != nil {
+                return 43.0 + 272.0 + (item?.itemTextFont.sizeOfString(string: item!.itemText!, constrainedToWidth: Double(self.frame.size.width - 64.0)).height)!
+            }
+            return 51.0 + (item?.itemTextFont.sizeOfString(string: item!.itemText!, constrainedToWidth: Double(self.frame.size.width - 64.0)).height)!
+        }
         return 500.0
     }
     
@@ -112,6 +144,10 @@ class SFFeedListView: SFBaseView, DVATableViewModelDatasourceDelegate, UITableVi
     @IBAction func segmentedControlPressed(_ sender: UISegmentedControl) {
         delegate?.feedListViewDelegateSocialNetworkSelected(socialNetwork: FeedSociaNetwork(rawValue: (sender.selectedSegmentIndex))!)
     }
+    
+    @IBAction func instagramLoginButtonPressed(_ sender: UIButton) {
+        delegate?.feedListViewDelegateInstagramLogin()
+    }
 }
 
 //__ View model class
@@ -127,6 +163,7 @@ class SFFeedListViewModel: NSObject {
 
 //__ Delegate method class
 protocol SFFeedListViewDelegate {
+    func feedListViewDelegateInstagramLogin()
     func feedListViewDelegateLoadMoreItems()
     func feedListViewDelegateSocialNetworkSelected(socialNetwork: FeedSociaNetwork)
 }

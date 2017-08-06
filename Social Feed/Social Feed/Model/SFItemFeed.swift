@@ -8,6 +8,11 @@
 
 import UIKit
 
+enum ItemFeedType {
+    case instagramFeedType
+    case twitterFeedType
+}
+
 class SFItemFeed: NSObject {
     //__ Atributtes
     internal var text : String?
@@ -17,8 +22,9 @@ class SFItemFeed: NSObject {
     internal var createdDate : Date?
     internal var userImageURL : URL?
     internal var locationName : String?
+    internal var feedType: ItemFeedType?
 
-    //__ Init method
+    //__ Init method for Instagram
     init(text: String, lowResolutionImageURL: URL, standardResolutionImageURL: URL, username: String, createdDate: Date, userImageURL: URL, locationName: String) {
         super.init()
         self.text = text
@@ -28,5 +34,19 @@ class SFItemFeed: NSObject {
         self.createdDate = createdDate
         self.userImageURL = userImageURL
         self.locationName = locationName
+        self.feedType = ItemFeedType.instagramFeedType
+    }
+    
+    //__ Init method for Twitter
+    init(text: String, userImageURL: URL, username: String, standardResolutionImageURL: URL?) {
+        super.init()
+        self.text = text
+        self.userImageURL = userImageURL
+        self.standardResolutionImageURL = standardResolutionImageURL
+        self.lowResolutionImageURL = nil
+        self.username = username
+        self.createdDate = nil
+        self.locationName = ""
+        self.feedType = ItemFeedType.twitterFeedType
     }
 }

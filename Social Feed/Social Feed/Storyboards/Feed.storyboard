@@ -63,18 +63,32 @@
                                     <constraint firstAttribute="trailing" secondItem="JmW-0F-wFc" secondAttribute="trailing" id="UQJ-R5-LY0"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwv-Ch-xcC">
+                                <rect key="frame" x="52" y="313" width="270" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="270" id="QgV-q6-JdJ"/>
+                                    <constraint firstAttribute="height" constant="40" id="Qw8-fZ-abB"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="instagramLoginButtonPressed:" destination="p85-KO-0Ul" eventType="touchUpInside" id="1QG-nk-39s"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="qnO-nx-5Ed" firstAttribute="top" secondItem="Bjt-3O-ewb" secondAttribute="bottom" id="3E3-vF-s9I"/>
+                            <constraint firstItem="pwv-Ch-xcC" firstAttribute="centerX" secondItem="p85-KO-0Ul" secondAttribute="centerX" id="Glx-M3-GFl"/>
                             <constraint firstItem="Bjt-3O-ewb" firstAttribute="top" secondItem="4Oq-VB-l5W" secondAttribute="bottom" id="JxG-e5-AHh"/>
                             <constraint firstItem="OOZ-IQ-Dk6" firstAttribute="top" secondItem="qnO-nx-5Ed" secondAttribute="bottom" id="Skt-U7-rOT"/>
                             <constraint firstItem="Bjt-3O-ewb" firstAttribute="leading" secondItem="p85-KO-0Ul" secondAttribute="leading" id="gZY-Ew-ErF"/>
                             <constraint firstAttribute="trailing" secondItem="Bjt-3O-ewb" secondAttribute="trailing" id="rT0-Tr-N0T"/>
                             <constraint firstItem="qnO-nx-5Ed" firstAttribute="leading" secondItem="p85-KO-0Ul" secondAttribute="leading" id="tWs-Lt-Q4a"/>
                             <constraint firstAttribute="trailing" secondItem="qnO-nx-5Ed" secondAttribute="trailing" id="u1k-Av-UOV"/>
+                            <constraint firstItem="pwv-Ch-xcC" firstAttribute="centerY" secondItem="p85-KO-0Ul" secondAttribute="centerY" id="zde-TK-IvD"/>
                         </constraints>
                         <connections>
+                            <outlet property="instagramLoginButton" destination="pwv-Ch-xcC" id="fOi-v7-Gq2"/>
                             <outlet property="itemsTableView" destination="JmW-0F-wFc" id="Gmg-v3-JKE"/>
                         </connections>
                     </view>

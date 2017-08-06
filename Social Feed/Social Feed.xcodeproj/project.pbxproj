@@ -50,6 +50,14 @@
 		C88CD3091F33BEC700F630BE /* InstagramUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C88CD2FE1F33BEC700F630BE /* InstagramUser.m */; };
 		C88CD30A1F33BEC700F630BE /* UserInPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = C88CD3001F33BEC700F630BE /* UserInPhoto.m */; };
 		C88CD30C1F33C0EA00F630BE /* SFFeedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CD30B1F33C0EA00F630BE /* SFFeedListView.swift */; };
+		C8DB721D1F34611B00A68410 /* SFTwitterRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DB721C1F34611B00A68410 /* SFTwitterRequestManager.swift */; };
+		C8DB72201F34740000A68410 /* SFTwitterProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DB721F1F34740000A68410 /* SFTwitterProvider.swift */; };
+		C8DB72231F34918100A68410 /* SFTwitterFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DB72211F34918100A68410 /* SFTwitterFeedTableViewCell.swift */; };
+		C8DB72241F34918100A68410 /* SFTwitterFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8DB72221F34918100A68410 /* SFTwitterFeedTableViewCell.xib */; };
+		C8DB722A1F363A0E00A68410 /* SFString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DB72291F363A0E00A68410 /* SFString.swift */; };
+		C8DB722C1F3656B200A68410 /* SFFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DB722B1F3656B200A68410 /* SFFont.swift */; };
+		C8DB722F1F36689200A68410 /* SFTwitterFeedImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DB722D1F36689200A68410 /* SFTwitterFeedImageTableViewCell.swift */; };
+		C8DB72301F36689200A68410 /* SFTwitterFeedImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8DB722E1F36689200A68410 /* SFTwitterFeedImageTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +146,14 @@
 		C88CD2FF1F33BEC700F630BE /* UserInPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInPhoto.h; sourceTree = "<group>"; };
 		C88CD3001F33BEC700F630BE /* UserInPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInPhoto.m; sourceTree = "<group>"; };
 		C88CD30B1F33C0EA00F630BE /* SFFeedListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFFeedListView.swift; sourceTree = "<group>"; };
+		C8DB721C1F34611B00A68410 /* SFTwitterRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFTwitterRequestManager.swift; sourceTree = "<group>"; };
+		C8DB721F1F34740000A68410 /* SFTwitterProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFTwitterProvider.swift; sourceTree = "<group>"; };
+		C8DB72211F34918100A68410 /* SFTwitterFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFTwitterFeedTableViewCell.swift; sourceTree = "<group>"; };
+		C8DB72221F34918100A68410 /* SFTwitterFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SFTwitterFeedTableViewCell.xib; sourceTree = "<group>"; };
+		C8DB72291F363A0E00A68410 /* SFString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFString.swift; sourceTree = "<group>"; };
+		C8DB722B1F3656B200A68410 /* SFFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFFont.swift; sourceTree = "<group>"; };
+		C8DB722D1F36689200A68410 /* SFTwitterFeedImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFTwitterFeedImageTableViewCell.swift; sourceTree = "<group>"; };
+		C8DB722E1F36689200A68410 /* SFTwitterFeedImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SFTwitterFeedImageTableViewCell.xib; sourceTree = "<group>"; };
 		C9BBFC0285D9D30C175B28EC /* Pods-Social Feed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social Feed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Social Feed/Pods-Social Feed.debug.xcconfig"; sourceTree = "<group>"; };
 		F3FADA8D04CB750455161E71 /* Pods-Social Feed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social Feed.release.xcconfig"; path = "Pods/Target Support Files/Pods-Social Feed/Pods-Social Feed.release.xcconfig"; sourceTree = "<group>"; };
 		F55AF61A3FED9054E5960D03 /* Pods_Social_FeedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Social_FeedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,6 +213,7 @@
 		C88CD2451F3376E100F630BE /* Social Feed */ = {
 			isa = PBXGroup;
 			children = (
+				C8DB72251F36395800A68410 /* Extensions */,
 				C88CD2461F3376E100F630BE /* AppDelegate.swift */,
 				C88CD26B1F337DDD00F630BE /* Social Feed-Bridging-Header.h */,
 				C88CD2721F33813500F630BE /* Storyboards */,
@@ -245,6 +262,7 @@
 			children = (
 				C88CD26F1F337FD000F630BE /* SFInstagramRequestManager.h */,
 				C88CD2701F337FD000F630BE /* SFInstagramRequestManager.m */,
+				C8DB721C1F34611B00A68410 /* SFTwitterRequestManager.swift */,
 			);
 			path = "Request Manager";
 			sourceTree = "<group>";
@@ -315,6 +333,7 @@
 		C88CD27F1F33824000F630BE /* Provider */ = {
 			isa = PBXGroup;
 			children = (
+				C8DB721E1F3473E600A68410 /* Twitter Provider */,
 				C88CD2831F3383CA00F630BE /* Instagram Provider */,
 				C88CD2811F33828D00F630BE /* SFBaseProvider.swift */,
 			);
@@ -383,6 +402,10 @@
 			children = (
 				C88CD29A1F33B9A200F630BE /* SFInstagramFeedTableViewCell.swift */,
 				C88CD29B1F33B9A200F630BE /* SFInstagramFeedTableViewCell.xib */,
+				C8DB72211F34918100A68410 /* SFTwitterFeedTableViewCell.swift */,
+				C8DB72221F34918100A68410 /* SFTwitterFeedTableViewCell.xib */,
+				C8DB722D1F36689200A68410 /* SFTwitterFeedImageTableViewCell.swift */,
+				C8DB722E1F36689200A68410 /* SFTwitterFeedImageTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -494,6 +517,23 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		C8DB721E1F3473E600A68410 /* Twitter Provider */ = {
+			isa = PBXGroup;
+			children = (
+				C8DB721F1F34740000A68410 /* SFTwitterProvider.swift */,
+			);
+			path = "Twitter Provider";
+			sourceTree = "<group>";
+		};
+		C8DB72251F36395800A68410 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C8DB72291F363A0E00A68410 /* SFString.swift */,
+				C8DB722B1F3656B200A68410 /* SFFont.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		CA8CF97E73DFD2A04AD547BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -596,7 +636,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C88CD28B1F338CA900F630BE /* Login.storyboard in Resources */,
+				C8DB72301F36689200A68410 /* SFTwitterFeedImageTableViewCell.xib in Resources */,
 				C88CD29D1F33B9A200F630BE /* SFInstagramFeedTableViewCell.xib in Resources */,
+				C8DB72241F34918100A68410 /* SFTwitterFeedTableViewCell.xib in Resources */,
 				C88CD2511F3376E100F630BE /* LaunchScreen.storyboard in Resources */,
 				C88CD24E1F3376E100F630BE /* Assets.xcassets in Resources */,
 				C88CD2741F33815E00F630BE /* Feed.storyboard in Resources */,
@@ -717,11 +759,14 @@
 				C88CD3061F33BEC700F630BE /* InstagramModel.m in Sources */,
 				C88CD2C31F33BB2700F630BE /* NSDictionary+DVATableViewModelProtocol.m in Sources */,
 				C88CD3071F33BEC700F630BE /* InstagramPaginationInfo.m in Sources */,
+				C8DB722A1F363A0E00A68410 /* SFString.swift in Sources */,
 				C88CD3051F33BEC700F630BE /* InstagramMedia.m in Sources */,
 				C88CD2981F33B15200F630BE /* SFItemFeed.swift in Sources */,
 				C88CD2821F33828D00F630BE /* SFBaseProvider.swift in Sources */,
 				C88CD29C1F33B9A200F630BE /* SFInstagramFeedTableViewCell.swift in Sources */,
+				C8DB72231F34918100A68410 /* SFTwitterFeedTableViewCell.swift in Sources */,
 				C88CD2BD1F33BB2700F630BE /* DVAArrayDataSourceForTableView.m in Sources */,
+				C8DB722F1F36689200A68410 /* SFTwitterFeedImageTableViewCell.swift in Sources */,
 				C88CD2881F33899E00F630BE /* SFRouterManager.swift in Sources */,
 				C88CD30C1F33C0EA00F630BE /* SFFeedListView.swift in Sources */,
 				C88CD2851F3383F000F630BE /* SFInstagramProvider.swift in Sources */,
@@ -731,6 +776,7 @@
 				C88CD2C51F33BB2700F630BE /* DVATableViewModel.m in Sources */,
 				C88CD3021F33BEC700F630BE /* InstagramKitConstants.m in Sources */,
 				C88CD2A01F33B9E600F630BE /* SFFeedViewObject.swift in Sources */,
+				C8DB72201F34740000A68410 /* SFTwitterProvider.swift in Sources */,
 				C88CD2921F3390AB00F630BE /* SFInstagramLoginView.swift in Sources */,
 				C88CD27E1F33823200F630BE /* SFFeedListViewController.swift in Sources */,
 				C88CD3081F33BEC700F630BE /* InstagramTag.m in Sources */,
@@ -744,6 +790,8 @@
 				C88CD2BF1F33BB2700F630BE /* NSArray+DVAPlistModelDatasource.m in Sources */,
 				C88CD2471F3376E100F630BE /* AppDelegate.swift in Sources */,
 				C88CD2C21F33BB2700F630BE /* NSDictionary+DVATableViewModelDatasource.m in Sources */,
+				C8DB722C1F3656B200A68410 /* SFFont.swift in Sources */,
+				C8DB721D1F34611B00A68410 /* SFTwitterRequestManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
