@@ -29,7 +29,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTP-NX-K4g">
-                                <rect key="frame" x="46" y="9" width="266" height="17"/>
+                                <rect key="frame" x="46" y="9" width="180" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="yiM-r7-ztL"/>
                                 </constraints>
@@ -46,6 +46,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05/Aug/2017" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geb-IY-jrp">
+                                <rect key="frame" x="226" y="9" width="86" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="86" id="EaZ-2Q-hwl"/>
+                                    <constraint firstAttribute="height" constant="17" id="WdH-Ya-Mu1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -53,8 +63,10 @@
                             <constraint firstAttribute="bottom" secondItem="uvY-7z-NdG" secondAttribute="bottom" constant="9" id="4CD-5Y-3GG"/>
                             <constraint firstAttribute="height" constant="48" id="C7o-bR-h5c"/>
                             <constraint firstItem="uvY-7z-NdG" firstAttribute="leading" secondItem="ndT-xk-Drp" secondAttribute="leading" constant="8" id="FeR-BE-rra"/>
-                            <constraint firstAttribute="trailing" secondItem="aTP-NX-K4g" secondAttribute="trailing" constant="8" id="V8v-HS-IbU"/>
                             <constraint firstItem="aTP-NX-K4g" firstAttribute="leading" secondItem="uvY-7z-NdG" secondAttribute="trailing" constant="8" id="Vgy-Nu-rkn"/>
+                            <constraint firstItem="geb-IY-jrp" firstAttribute="top" secondItem="ndT-xk-Drp" secondAttribute="top" constant="9" id="XrN-Cb-XPV"/>
+                            <constraint firstItem="geb-IY-jrp" firstAttribute="leading" secondItem="aTP-NX-K4g" secondAttribute="trailing" id="bVN-ot-Baa"/>
+                            <constraint firstAttribute="trailing" secondItem="geb-IY-jrp" secondAttribute="trailing" constant="8" id="cFL-sC-OTk"/>
                             <constraint firstItem="uvY-7z-NdG" firstAttribute="top" secondItem="ndT-xk-Drp" secondAttribute="top" constant="9" id="eys-9l-ht8"/>
                             <constraint firstItem="aTP-NX-K4g" firstAttribute="top" secondItem="ndT-xk-Drp" secondAttribute="top" constant="9" id="h8Y-Yc-RjI"/>
                             <constraint firstAttribute="trailing" secondItem="c74-iL-Mf3" secondAttribute="trailing" constant="8" id="h8b-Va-xBM"/>
@@ -110,6 +122,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="itemFeedCreatedAtLabel" destination="geb-IY-jrp" id="bxq-Qr-4rr"/>
                 <outlet property="itemFeedImageView" destination="ffR-e2-AGV" id="79v-Vc-fat"/>
                 <outlet property="itemFeedLocationLabel" destination="c74-iL-Mf3" id="z8k-eZ-M3v"/>
                 <outlet property="itemFeedTextLabel" destination="syH-vA-ecC" id="BUo-N7-5Nt"/>

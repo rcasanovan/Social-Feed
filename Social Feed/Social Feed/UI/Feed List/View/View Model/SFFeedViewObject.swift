@@ -17,9 +17,10 @@ class SFFeedViewObject: NSObject, DVATableViewModelProtocol {
     internal var itemLocationName: String?
     internal var itemType: ItemFeedType?
     internal var itemTextFont: UIFont!
+    internal var itemCreatedAt: String?
     
     //__ Init method
-    init(itemUsername: String, itemImageURL: URL, itemText: String, itemUserImageURL: URL, itemLocationName: String, itemType: ItemFeedType) {
+    init(itemUsername: String, itemImageURL: URL, itemText: String, itemUserImageURL: URL, itemLocationName: String, itemType: ItemFeedType, itemCreatedAt: String) {
         super.init()
         self.itemUsername = itemUsername
         self.itemImageURL = itemImageURL
@@ -28,10 +29,11 @@ class SFFeedViewObject: NSObject, DVATableViewModelProtocol {
         self.itemLocationName = itemLocationName
         self.itemTextFont = UIFont.systemFont(ofSize: 15.0)
         self.itemType = itemType
+        self.itemCreatedAt = itemCreatedAt
     }
     
     //__ Init method for twitter feed
-    init(itemText: String, itemUserImageURL: URL, username: String, itemImageURL: URL?, itemType: ItemFeedType) {
+    init(itemText: String, itemUserImageURL: URL, username: String, itemImageURL: URL?, itemType: ItemFeedType, itemCreatedAt: String) {
         super.init()
         self.itemUsername = username
         self.itemImageURL = itemImageURL
@@ -40,6 +42,7 @@ class SFFeedViewObject: NSObject, DVATableViewModelProtocol {
         self.itemLocationName = ""
         self.itemTextFont = UIFont.systemFont(ofSize: 15.0)
         self.itemType = itemType
+        self.itemCreatedAt = itemCreatedAt
     }
     
     //__ Generate the account objects to use un UI (all accounts)
@@ -47,11 +50,11 @@ class SFFeedViewObject: NSObject, DVATableViewModelProtocol {
         var items: [SFFeedViewObject] = []
         for item in itemObjects {
             if (item.feedType == ItemFeedType.instagramFeedType) {
-                let instagramItem = SFFeedViewObject(itemUsername: item.username!, itemImageURL: item.standardResolutionImageURL!, itemText: item.text!, itemUserImageURL: item.userImageURL!, itemLocationName: item.locationName!, itemType: item.feedType!)
+                let instagramItem = SFFeedViewObject(itemUsername: item.username!, itemImageURL: item.standardResolutionImageURL!, itemText: item.text!, itemUserImageURL: item.userImageURL!, itemLocationName: item.locationName!, itemType: item.feedType!, itemCreatedAt: (item.createdDate?.ddMMMyyyyFormat())!)
                 items.append(instagramItem)
             }
             else {
-                let twitterItem = SFFeedViewObject(itemText: item.text!, itemUserImageURL: item.userImageURL!, username: item.username!, itemImageURL: item.standardResolutionImageURL, itemType: item.feedType!)
+                let twitterItem = SFFeedViewObject(itemText: item.text!, itemUserImageURL: item.userImageURL!, username: item.username!, itemImageURL: item.standardResolutionImageURL, itemType: item.feedType!, itemCreatedAt: (item.createdDate?.ddMMMyyyyFormat())!)
                 items.append(twitterItem)
             }
         }

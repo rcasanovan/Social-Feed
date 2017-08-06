@@ -21,5 +21,6 @@ typedef void(^SFInstagramRequestManagerCompletionBlock)(NSArray <InstagramMedia 
 - (BOOL)isSessionValid;
 - (NSURL *)authorizationURL;
 - (BOOL)receivedValidAccessTokenFromURL:(NSURL *)requestURL;
+- (void)logout;
 
 @end

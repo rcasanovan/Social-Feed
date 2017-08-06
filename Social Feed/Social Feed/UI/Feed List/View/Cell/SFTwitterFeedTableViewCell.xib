@@ -35,7 +35,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vw8-rf-vHF">
-                        <rect key="frame" x="56" y="8" width="256" height="17"/>
+                        <rect key="frame" x="56" y="8" width="170" height="17"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="17" id="RoF-cQ-2nJ"/>
                         </constraints>
@@ -43,25 +43,38 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05/Aug/2017" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpJ-RF-byu">
+                        <rect key="frame" x="226" y="8" width="86" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="ZaX-sQ-AlT"/>
+                            <constraint firstAttribute="width" constant="86" id="bLP-gB-Nfb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="uZ8-iq-KfD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="1ly-dj-8KB"/>
                     <constraint firstItem="Vw8-rf-vHF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="9J8-32-Z5F"/>
-                    <constraint firstAttribute="trailing" secondItem="Vw8-rf-vHF" secondAttribute="trailing" constant="8" id="AUQ-iN-95V"/>
                     <constraint firstItem="gWB-TR-ZqP" firstAttribute="leading" secondItem="uZ8-iq-KfD" secondAttribute="trailing" constant="8" id="JGN-GA-ak6"/>
                     <constraint firstAttribute="trailing" secondItem="gWB-TR-ZqP" secondAttribute="trailing" constant="8" id="RPO-UQ-MTV"/>
                     <constraint firstItem="uZ8-iq-KfD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Wxk-Se-LMa"/>
+                    <constraint firstItem="tpJ-RF-byu" firstAttribute="leading" secondItem="Vw8-rf-vHF" secondAttribute="trailing" id="aoJ-XQ-i2C"/>
                     <constraint firstItem="gWB-TR-ZqP" firstAttribute="top" secondItem="Vw8-rf-vHF" secondAttribute="bottom" constant="8" id="jLf-JH-5rH"/>
+                    <constraint firstItem="tpJ-RF-byu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="jft-53-Ve2"/>
                     <constraint firstItem="Vw8-rf-vHF" firstAttribute="leading" secondItem="uZ8-iq-KfD" secondAttribute="trailing" constant="8" id="obt-Kb-WOw"/>
+                    <constraint firstAttribute="trailing" secondItem="tpJ-RF-byu" secondAttribute="trailing" constant="8" id="shb-0N-nG8"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="itemFeedCreatedAtLabel" destination="tpJ-RF-byu" id="hut-ed-hPh"/>
                 <outlet property="itemFeedTextHeightConstraint" destination="ffM-oR-ymO" id="Cgl-2i-tfB"/>
                 <outlet property="itemFeedTextLabel" destination="gWB-TR-ZqP" id="vtG-aQ-ygs"/>
                 <outlet property="itemFeedUserImageView" destination="uZ8-iq-KfD" id="Xfh-ME-KPF"/>
                 <outlet property="itemFeedUsernameLabel" destination="Vw8-rf-vHF" id="DgY-d4-hxr"/>
             </connections>
-            <point key="canvasLocation" x="34" y="110.5"/>
+            <point key="canvasLocation" x="34" y="110"/>
         </tableViewCell>
     </objects>
 </document>

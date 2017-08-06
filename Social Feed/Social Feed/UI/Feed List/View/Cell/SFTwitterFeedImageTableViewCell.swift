@@ -18,6 +18,7 @@ class SFTwitterFeedImageTableViewCell: UITableViewCell {
     @IBOutlet weak private var itemFeedTextLabel: UILabel?
     @IBOutlet weak private var itemFeedImageView: UIImageView?
     @IBOutlet weak private var itemFeedTextHeightConstraint: NSLayoutConstraint?
+    @IBOutlet weak private var itemFeedCreatedAtLabel : UILabel?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,6 +30,7 @@ class SFTwitterFeedImageTableViewCell: UITableViewCell {
         self.itemFeedTextLabel?.text = ""
         self.itemFeedImageView?.image = nil
         self.itemFeedTextHeightConstraint?.constant = 18.0
+        self.itemFeedCreatedAtLabel?.text = ""
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -52,6 +54,8 @@ class SFTwitterFeedImageTableViewCell: UITableViewCell {
         itemFeedUserImageView?.hnk_setImageFromURL((model.itemUserImageURL?.absoluteURL)!)
         
         self.itemFeedUsernameLabel?.text = model.itemUsername
+        
+        self.itemFeedCreatedAtLabel?.text = model.itemCreatedAt
         
         self.itemFeedTextLabel?.font = model.itemTextFont
         self.itemFeedTextLabel?.text = model.itemText

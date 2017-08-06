@@ -53,6 +53,7 @@
 		C8D93BF21F37184400FBC3C3 /* UICKeyChainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D93BEF1F37184400FBC3C3 /* UICKeyChainStore.m */; };
 		C8D93BF31F37184400FBC3C3 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C8D93BF01F37184400FBC3C3 /* LICENSE */; };
 		C8D93BF41F37184400FBC3C3 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C8D93BF11F37184400FBC3C3 /* README.md */; };
+		C8D93BF61F371E8000FBC3C3 /* SFDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D93BF51F371E8000FBC3C3 /* SFDate.swift */; };
 		C8DB721D1F34611B00A68410 /* SFTwitterRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DB721C1F34611B00A68410 /* SFTwitterRequestManager.swift */; };
 		C8DB72201F34740000A68410 /* SFTwitterProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DB721F1F34740000A68410 /* SFTwitterProvider.swift */; };
 		C8DB72231F34918100A68410 /* SFTwitterFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DB72211F34918100A68410 /* SFTwitterFeedTableViewCell.swift */; };
@@ -153,6 +154,7 @@
 		C8D93BEF1F37184400FBC3C3 /* UICKeyChainStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICKeyChainStore.m; sourceTree = "<group>"; };
 		C8D93BF01F37184400FBC3C3 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C8D93BF11F37184400FBC3C3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C8D93BF51F371E8000FBC3C3 /* SFDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFDate.swift; sourceTree = "<group>"; };
 		C8DB721C1F34611B00A68410 /* SFTwitterRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFTwitterRequestManager.swift; sourceTree = "<group>"; };
 		C8DB721F1F34740000A68410 /* SFTwitterProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFTwitterProvider.swift; sourceTree = "<group>"; };
 		C8DB72211F34918100A68410 /* SFTwitterFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFTwitterFeedTableViewCell.swift; sourceTree = "<group>"; };
@@ -565,6 +567,7 @@
 			children = (
 				C8DB72291F363A0E00A68410 /* SFString.swift */,
 				C8DB722B1F3656B200A68410 /* SFFont.swift */,
+				C8D93BF51F371E8000FBC3C3 /* SFDate.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -796,6 +799,7 @@
 				C88CD2C31F33BB2700F630BE /* NSDictionary+DVATableViewModelProtocol.m in Sources */,
 				C88CD3071F33BEC700F630BE /* InstagramPaginationInfo.m in Sources */,
 				C8DB722A1F363A0E00A68410 /* SFString.swift in Sources */,
+				C8D93BF61F371E8000FBC3C3 /* SFDate.swift in Sources */,
 				C88CD3051F33BEC700F630BE /* InstagramMedia.m in Sources */,
 				C88CD2981F33B15200F630BE /* SFItemFeed.swift in Sources */,
 				C88CD2821F33828D00F630BE /* SFBaseProvider.swift in Sources */,

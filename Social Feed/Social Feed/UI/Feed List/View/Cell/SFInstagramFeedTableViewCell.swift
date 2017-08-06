@@ -18,6 +18,7 @@ class SFInstagramFeedTableViewCell: UITableViewCell {
     @IBOutlet weak private var itemFeedUsernameLabel : UILabel?
     @IBOutlet weak private var itemFeedTextLabel : UILabel?
     @IBOutlet weak private var itemFeedLocationLabel : UILabel?
+    @IBOutlet weak private var itemFeedCreatedAtLabel : UILabel?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,6 +30,7 @@ class SFInstagramFeedTableViewCell: UITableViewCell {
         self.itemFeedImageView?.image = nil
         self.itemFeedTextLabel?.text = ""
         self.itemFeedLocationLabel?.text = ""
+        self.itemFeedCreatedAtLabel?.text = ""
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -48,6 +50,8 @@ class SFInstagramFeedTableViewCell: UITableViewCell {
         itemFeedUserImageView?.hnk_setImageFromURL(model.itemUserImageURL!)
         
         self.itemFeedUsernameLabel?.text = model.itemUsername
+        
+        self.itemFeedCreatedAtLabel?.text = model.itemCreatedAt
         
         self.itemFeedLocationLabel?.text = model.itemLocationName
         

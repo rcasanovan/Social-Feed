@@ -49,4 +49,8 @@ class SFInstagramProvider: SFBaseProvider {
     public func instagramProviderReceivedValidAccessTokenFromURL(url: NSURL)-> Bool {
         return self.instagramRequestManager.receivedValidAccessToken(from: url as URL!)
     }
+    
+    public func instagramProviderLogout() {
+        return self.instagramRequestManager.logout()
+    }
 }

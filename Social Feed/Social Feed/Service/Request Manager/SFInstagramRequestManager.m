@@ -65,4 +65,8 @@
     return NO;
 }
 
+- (void)logout {
+    [[InstagramEngine sharedEngine] logout];
+}
+
 @end

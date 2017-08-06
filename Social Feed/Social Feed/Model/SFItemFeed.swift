@@ -38,14 +38,14 @@ class SFItemFeed: NSObject {
     }
     
     //__ Init method for Twitter
-    init(text: String, userImageURL: URL, username: String, standardResolutionImageURL: URL?) {
+    init(text: String, userImageURL: URL, username: String, standardResolutionImageURL: URL?, createdDate: Date) {
         super.init()
         self.text = text
         self.userImageURL = userImageURL
         self.standardResolutionImageURL = standardResolutionImageURL
         self.lowResolutionImageURL = nil
         self.username = username
-        self.createdDate = nil
+        self.createdDate = createdDate
         self.locationName = ""
         self.feedType = ItemFeedType.twitterFeedType
     }

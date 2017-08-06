@@ -35,7 +35,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcT-io-6OL">
-                        <rect key="frame" x="56" y="8" width="256" height="17"/>
+                        <rect key="frame" x="56" y="8" width="170" height="17"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="17" id="J4y-W2-Xsz"/>
                         </constraints>
@@ -49,23 +49,36 @@
                             <constraint firstAttribute="height" constant="256" id="s3E-wa-Njv"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05/Aug/2017" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnC-zh-T2V">
+                        <rect key="frame" x="226" y="8" width="86" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="RXM-dp-OCz"/>
+                            <constraint firstAttribute="width" constant="86" id="e5w-hf-huW"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="i9O-FO-a5d" firstAttribute="top" secondItem="6Af-p7-3jL" secondAttribute="top" constant="8" id="2Di-Lb-u2a"/>
                     <constraint firstItem="i9O-FO-a5d" firstAttribute="leading" secondItem="6Af-p7-3jL" secondAttribute="leading" constant="8" id="2Nd-j3-AFa"/>
+                    <constraint firstAttribute="trailing" secondItem="AnC-zh-T2V" secondAttribute="trailing" constant="8" id="5Fh-j5-hq9"/>
+                    <constraint firstItem="AnC-zh-T2V" firstAttribute="top" secondItem="6Af-p7-3jL" secondAttribute="top" constant="8" id="7Lo-SR-aTc"/>
                     <constraint firstItem="rcT-io-6OL" firstAttribute="leading" secondItem="i9O-FO-a5d" secondAttribute="trailing" constant="8" id="BKJ-ho-82R"/>
                     <constraint firstAttribute="trailing" secondItem="amv-MO-u0B" secondAttribute="trailing" constant="8" id="C6M-yr-6GF"/>
                     <constraint firstItem="amv-MO-u0B" firstAttribute="leading" secondItem="i9O-FO-a5d" secondAttribute="trailing" constant="8" id="D2Q-1a-uGi"/>
                     <constraint firstItem="g5c-rM-09a" firstAttribute="leading" secondItem="6Af-p7-3jL" secondAttribute="leading" constant="56" id="P6u-hB-xCI"/>
                     <constraint firstItem="rcT-io-6OL" firstAttribute="top" secondItem="6Af-p7-3jL" secondAttribute="top" constant="8" id="Svp-z4-08D"/>
                     <constraint firstItem="amv-MO-u0B" firstAttribute="top" secondItem="rcT-io-6OL" secondAttribute="bottom" constant="8" id="dEE-yD-s48"/>
-                    <constraint firstAttribute="trailing" secondItem="rcT-io-6OL" secondAttribute="trailing" constant="8" id="m00-39-mGA"/>
                     <constraint firstAttribute="trailing" secondItem="g5c-rM-09a" secondAttribute="trailing" constant="8" id="m5f-qC-4x5"/>
+                    <constraint firstItem="AnC-zh-T2V" firstAttribute="leading" secondItem="rcT-io-6OL" secondAttribute="trailing" id="nDI-DK-LYh"/>
                     <constraint firstItem="g5c-rM-09a" firstAttribute="top" secondItem="amv-MO-u0B" secondAttribute="bottom" constant="8" id="qce-WY-mcA"/>
                     <constraint firstAttribute="bottom" secondItem="g5c-rM-09a" secondAttribute="bottom" constant="8" id="zVf-yo-9ou"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="itemFeedCreatedAtLabel" destination="AnC-zh-T2V" id="ghw-uK-mft"/>
                 <outlet property="itemFeedImageView" destination="g5c-rM-09a" id="zUo-cd-Wre"/>
                 <outlet property="itemFeedTextHeightConstraint" destination="0Nu-YN-nDk" id="SwV-D8-a25"/>
                 <outlet property="itemFeedTextLabel" destination="amv-MO-u0B" id="z9j-eg-YYf"/>

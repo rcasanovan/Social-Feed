@@ -20,6 +20,8 @@ class SFTwitterProvider: SFBaseProvider {
                 for item in items! {
                     var embeddedImageURL: URL?
                     let iTemDictionary = item as! Dictionary<String, AnyObject>
+                    let createdAtString = iTemDictionary["created_at"] as! String
+                    let createdAt = Date.getDateFromTwitterFormart(stringDate: createdAtString)
                     let initialText = iTemDictionary["text"] as! String
                     var text = initialText
                     let internalUrl = String.extractURLs(text: initialText).first as URL?
@@ -32,12 +34,11 @@ class SFTwitterProvider: SFBaseProvider {
                             let media = mediaObject?.firstObject as! Dictionary<String, AnyObject>?
                             embeddedImageURL = URL(string: media?["media_url_https"] as! String)
                         }
-                    //embeddedImageURL = String.extractURLs(text: text).first as URL?
                     let user = iTemDictionary["user"]
                     let userImageURL = user?["profile_image_url"] as! String
                     let username = user?["name"] as! String
                     self.lasItemId = iTemDictionary["id"] as! NSNumber
-                    let modelItem = SFItemFeed(text: text, userImageURL: NSURL(string: userImageURL)! as URL, username: username, standardResolutionImageURL: embeddedImageURL)
+                    let modelItem = SFItemFeed(text: text, userImageURL: NSURL(string: userImageURL)! as URL, username: username, standardResolutionImageURL: embeddedImageURL, createdDate: createdAt)
                     modelItems.append(modelItem)
                 }
                 if (modelItems.count > 0) {
@@ -54,5 +55,9 @@ class SFTwitterProvider: SFBaseProvider {
             return true
         }
         return false
+    }
+    
+    public func twitterProviderLogout() {
+        Twitter.sharedInstance().sessionStore.logOutUserID((Twitter.sharedInstance().sessionStore.session()?.userID)!)
     }
 }
