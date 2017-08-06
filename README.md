@@ -19,7 +19,7 @@ This is a sample to get Social Feed with Objective C / Swift 3 integration
 ## Future improvements
 
 * Coredata integration: We can add core data to project in order to save locally all feed list so we can show it while the api call returns the update list
-* Loader integration: We can add SVProgressHUD pod or something like this in order to show a loader while the api call return information
+* Loader integration: We can add SVProgressHUD pod or something like this in order to show a loader while the api call returns information
 
 ## Development tools
 
