@@ -8,6 +8,7 @@ This is a sample to get Social Feed with Objective C / Swift 3 integration
 * Model-View-View-Model (MVVM)
 
 ## Screenshots
+![alt tag](https://github.com/rcasanovan/Social-Feed/blob/master/presentation/images/01.png?raw=true)
 
 ## Development tools
 
