@@ -19,6 +19,7 @@ enum FeedSociaNetwork: Int {
 class SFFeedListView: SFBaseView, DVATableViewModelDatasourceDelegate, UITableViewDelegate {
     //__ IBOutlets
     @IBOutlet weak fileprivate var itemsTableView: UITableView?
+    @IBOutlet weak fileprivate var socialNetwotksSegmentedControl: UISegmentedControl?
     @IBOutlet weak fileprivate var instagramLoginButton: UIButton?
     @IBOutlet weak fileprivate var allFeedNotLoginView: UIView?
     @IBOutlet weak fileprivate var allFeedNotLoginTitleLabel: UILabel?
@@ -74,17 +75,24 @@ class SFFeedListView: SFBaseView, DVATableViewModelDatasourceDelegate, UITableVi
         //__ Configure UI
         self.backgroundColor = UIColor.white
         
+        setupSegmentedControl()
         setupLoginButtons()
         
         //__ Setup the data source
         setupDataSource()
     }
     
+    private func setupSegmentedControl() {
+        socialNetwotksSegmentedControl?.setTitle(NSLocalizedString("segmented control instagram", comment: "instagram"), forSegmentAt: 0)
+        socialNetwotksSegmentedControl?.setTitle(NSLocalizedString("segmented control twitter", comment: "twitter"), forSegmentAt: 1)
+        socialNetwotksSegmentedControl?.setTitle(NSLocalizedString("segmented control all", comment: "all"), forSegmentAt: 2)
+    }
+    
     private func setupLoginButtons() {
         instagramLoginButton?.clipsToBounds = true
         instagramLoginButton?.layer.cornerRadius = 4.0
         instagramLoginButton?.backgroundColor = UIColor.orange
-        instagramLoginButton?.setTitle("Login con Instgram", for: UIControlState.normal)
+        instagramLoginButton?.setTitle(NSLocalizedString("log in instagram", comment: "login with instagram"), for: UIControlState.normal)
         
         if (twitterLoginButton == nil) {
             twitterLoginButton = TWTRLogInButton(logInCompletion: { session, error in

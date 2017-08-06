@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  Social Feed
+
+  Created by Ricardo Casanova on 06/08/2017.
+  Copyright © 2017 Social Feed. All rights reserved.
+*/
+
+//__ Segmented control
+"segmented control instagram" = "Instagram";
+"segmented control twitter" = "Twitter";
+"segmented control all" = "Todos";
+
+//__ Login
+"log in instagram" = "Log in con Instagram";
+"log in message" = "Debes hacer log in con alguna de las redes sociales (Instagram o Twitter) para visualizar el listado aquí.\n\nNOTA: La app de Instagram se encuentra en modo 'Sandbox' por lo que no es posible obtener más de 20 publicaciones (las más recientes).";
+"log in cancel" = "Cancelar";
+
+//__ Logout
+"log out session" = "Sesión";
+"log out instagram" = "Log out Instagram";
+"log out twitter" = "Log out Twitter";

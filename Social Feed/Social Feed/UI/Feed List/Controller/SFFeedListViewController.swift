@@ -58,7 +58,7 @@ class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
         let logoutButton = UIButton(type: .custom)
         logoutButton.frame = CGRect(x: 0.0, y: 0.0, width: 80.0, height: 30.0)
         logoutButton.setTitleColor(UIColor.black, for: UIControlState.normal)
-        logoutButton.setTitle("Session", for: UIControlState.normal)
+        logoutButton.setTitle(NSLocalizedString("log out session", comment: "session title"), for: UIControlState.normal)
         logoutButton.addTarget(self, action: #selector(showLogoutOptions), for: .touchUpInside)
         let logoutItem = UIBarButtonItem(customView: logoutButton)
         
@@ -76,7 +76,7 @@ class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
         viewModel.showTwitterFeed = false
         viewModel.instagramLogged = self.instagramProvider.instagramProviderIsSessionValid()
         viewModel.twitterLogged = self.twitterProvider.twitterProviderIsSessionValid()
-        viewModel.noLoginMessage = "Mensaje de prueba, test"
+        viewModel.noLoginMessage = NSLocalizedString("log in message", comment: "login message")
         self.feedListView.viewModel = viewModel;
     }
     
@@ -85,17 +85,17 @@ class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
                                       message: nil,
                                       preferredStyle: UIAlertControllerStyle.actionSheet)
         
-        let logoutInstagramAction = UIAlertAction(title: "log out Instagram",
+        let logoutInstagramAction = UIAlertAction(title: NSLocalizedString("log out instagram", comment: "logout instagram action"),
                                                   style: .default, handler: { (actionSheetController) -> Void in
                                                     self.logoutInstragram()
         })
         
-        let logoutTwitterAction = UIAlertAction(title: "log out Twitter",
+        let logoutTwitterAction = UIAlertAction(title: NSLocalizedString("log out twitter", comment: "logout twitter action"),
                                                 style: .default, handler: { (actionSheetController) -> Void in
                                                     self.logoutTwitter()
         })
         
-        let cancelAction = UIAlertAction(title: "Cancel",
+        let cancelAction = UIAlertAction(title: NSLocalizedString("log in cancel", comment: "logout cancel action"),
                                          style: .cancel, handler: nil)
         
         if self.instagramProvider.instagramProviderIsSessionValid() {

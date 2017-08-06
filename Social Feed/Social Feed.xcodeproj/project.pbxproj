@@ -54,6 +54,7 @@
 		C8D93BF31F37184400FBC3C3 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C8D93BF01F37184400FBC3C3 /* LICENSE */; };
 		C8D93BF41F37184400FBC3C3 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C8D93BF11F37184400FBC3C3 /* README.md */; };
 		C8D93BF61F371E8000FBC3C3 /* SFDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D93BF51F371E8000FBC3C3 /* SFDate.swift */; };
+		C8D93BFA1F37647900FBC3C3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C8D93BFC1F37647900FBC3C3 /* Localizable.strings */; };
 		C8DB721D1F34611B00A68410 /* SFTwitterRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DB721C1F34611B00A68410 /* SFTwitterRequestManager.swift */; };
 		C8DB72201F34740000A68410 /* SFTwitterProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DB721F1F34740000A68410 /* SFTwitterProvider.swift */; };
 		C8DB72231F34918100A68410 /* SFTwitterFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DB72211F34918100A68410 /* SFTwitterFeedTableViewCell.swift */; };
@@ -155,6 +156,9 @@
 		C8D93BF01F37184400FBC3C3 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C8D93BF11F37184400FBC3C3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C8D93BF51F371E8000FBC3C3 /* SFDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFDate.swift; sourceTree = "<group>"; };
+		C8D93BF71F37640B00FBC3C3 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		C8D93BFB1F37647900FBC3C3 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C8D93BFD1F37647C00FBC3C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C8DB721C1F34611B00A68410 /* SFTwitterRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFTwitterRequestManager.swift; sourceTree = "<group>"; };
 		C8DB721F1F34740000A68410 /* SFTwitterProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFTwitterProvider.swift; sourceTree = "<group>"; };
 		C8DB72211F34918100A68410 /* SFTwitterFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFTwitterFeedTableViewCell.swift; sourceTree = "<group>"; };
@@ -236,6 +240,7 @@
 				C88CD24D1F3376E100F630BE /* Assets.xcassets */,
 				C88CD24F1F3376E100F630BE /* LaunchScreen.storyboard */,
 				C88CD2521F3376E100F630BE /* Info.plist */,
+				C8D93BFC1F37647900FBC3C3 /* Localizable.strings */,
 			);
 			path = "Social Feed";
 			sourceTree = "<group>";
@@ -677,6 +682,7 @@
 				C8DB72301F36689200A68410 /* SFTwitterFeedImageTableViewCell.xib in Resources */,
 				C8D93BF31F37184400FBC3C3 /* LICENSE in Resources */,
 				C88CD29D1F33B9A200F630BE /* SFInstagramFeedTableViewCell.xib in Resources */,
+				C8D93BFA1F37647900FBC3C3 /* Localizable.strings in Resources */,
 				C8DB72241F34918100A68410 /* SFTwitterFeedTableViewCell.xib in Resources */,
 				C88CD2511F3376E100F630BE /* LaunchScreen.storyboard in Resources */,
 				C88CD24E1F3376E100F630BE /* Assets.xcassets in Resources */,
@@ -861,8 +867,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				C88CD2501F3376E100F630BE /* Base */,
+				C8D93BF71F37640B00FBC3C3 /* es */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C8D93BFC1F37647900FBC3C3 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C8D93BFB1F37647900FBC3C3 /* es */,
+				C8D93BFD1F37647C00FBC3C3 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -872,6 +888,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -922,6 +939,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

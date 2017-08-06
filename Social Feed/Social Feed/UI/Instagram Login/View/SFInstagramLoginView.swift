@@ -29,7 +29,7 @@ class SFInstagramLoginView: SFBaseView, UIWebViewDelegate {
     
     private func setupView() {
         cancelButton?.backgroundColor = UIColor.red
-        cancelButton?.setTitle("Cancelar", for: UIControlState.normal)
+        cancelButton?.setTitle(NSLocalizedString("log in cancel", comment: "login cancel action"), for: UIControlState.normal)
         
         self.loginWebView?.delegate = self
         self.loginWebView?.scrollView.bounces = false

@@ -77,10 +77,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nDY-U4-HDo">
                                 <rect key="frame" x="0.0" y="114" width="375" height="553"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dslfjsdklfj kljsdlkf jdklfj lkdsjf lksdjflksd j flksdjfkl sjdkfl jsdlkf jsdlk fsdf sdf dfdfdf" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pah-hO-aYK">
-                                        <rect key="frame" x="8" y="8" width="359" height="230"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pah-hO-aYK">
+                                        <rect key="frame" x="8" y="8" width="359" height="280"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="230" id="RWj-6N-dOk"/>
+                                            <constraint firstAttribute="height" constant="280" id="RWj-6N-dOk"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -116,6 +116,7 @@
                             <outlet property="allFeedNotLoginView" destination="nDY-U4-HDo" id="Ikc-DN-h2F"/>
                             <outlet property="instagramLoginButton" destination="pwv-Ch-xcC" id="fOi-v7-Gq2"/>
                             <outlet property="itemsTableView" destination="JmW-0F-wFc" id="Gmg-v3-JKE"/>
+                            <outlet property="socialNetwotksSegmentedControl" destination="4fy-eu-mRF" id="qyT-Pp-WFw"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="RLa-Ny-SqP"/>
