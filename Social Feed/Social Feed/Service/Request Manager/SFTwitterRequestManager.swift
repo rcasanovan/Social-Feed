@@ -11,13 +11,17 @@ import UIKit
 import TwitterKit
 
 class SFTwitterRequestManager: NSObject {
+    //__ Shared instance (singleton's instance)
     static let shared = SFTwitterRequestManager()
     
+    //__ Method to get user's own feed list
     public func requestSelfFeed(userId:String, lasItemId:NSNumber, completion: @escaping (_ items: [Any]?, _ succes: Bool, _ error: Error?) -> Void) {
+        //__ Configure parameters for api call
         var parameters: [String:String] = [:]
         parameters["user_id"] = userId
         parameters["count"] = "20"
         parameters["exclude_replies"] = "1"
+        //__ lasItemId.intValue != 0 ? -> isn't the first api call
         if (lasItemId.intValue != 0) {
             parameters["max_id"] = lasItemId.stringValue
         }
@@ -27,12 +31,10 @@ class SFTwitterRequestManager: NSObject {
             do {
                 let response = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [[String : Any]]
                 if response != nil {
-                    print((response! as NSArray).debugDescription)
                     completion(Array(response!), true, nil)
                 }
             }
             catch {
-                print(error.localizedDescription)
                 completion(nil, false, error)
             }
         })

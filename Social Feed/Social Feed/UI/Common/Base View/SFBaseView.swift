@@ -8,14 +8,7 @@
 
 import UIKit
 
+//__ This class could be used to add general methods to all views in the app
+//__ For this sample, we don't have any general method to include here
 class SFBaseView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
 }

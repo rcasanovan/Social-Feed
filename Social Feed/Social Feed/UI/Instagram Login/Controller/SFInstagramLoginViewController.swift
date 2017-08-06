@@ -9,10 +9,11 @@
 import UIKit
 
 class SFInstagramLoginViewController: SFBaseViewController, SFInstagramLoginViewDelegate {
-    private var instagramProvider: SFInstagramProvider!
     //__ Private section
+    private var instagramProvider: SFInstagramProvider!
     private var instagramLoginView : SFInstagramLoginView {
         get {
+            //__ Use get property in order to set the view controller's view to SFInstagramLoginView object
             return (self.view as? SFInstagramLoginView)!;
         }
     }
@@ -23,22 +24,28 @@ class SFInstagramLoginViewController: SFBaseViewController, SFInstagramLoginView
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        //__ Configure view's delegate to get all user interaction
         self.instagramLoginView.delegate = self
+        //__ Init the provider
         self.instagramProvider = SFInstagramProvider()
+        //__ init the view model
         viewModel()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    //__ Method to inject information to the view
     private func viewModel() {
         let viewModel = SFInstagramLoginViewModel()
         viewModel.instagramAuthUrl = self.instagramProvider.instagramProviderAuthorizationURL()
         self.instagramLoginView.viewModel = viewModel;
     }
     
+    //__ Delegate methods
+    
+    //__ Method to get the authentication success for instagram
     func instagramLoginViewDelegateAuthenticationSuccess(url: NSURL) {
         if (self.instagramProvider.instagramProviderReceivedValidAccessTokenFromURL(url: url)) {
             self.dismiss(animated: true, completion: {
@@ -46,6 +53,7 @@ class SFInstagramLoginViewController: SFBaseViewController, SFInstagramLoginView
         }
     }
     
+    //__ Method to get the cancel event
     func instagramLoginViewDelegateCancel() {
         self.dismiss(animated: true, completion: {
         })

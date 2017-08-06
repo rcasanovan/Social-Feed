@@ -12,8 +12,6 @@
 		C88CD2471F3376E100F630BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CD2461F3376E100F630BE /* AppDelegate.swift */; };
 		C88CD24E1F3376E100F630BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C88CD24D1F3376E100F630BE /* Assets.xcassets */; };
 		C88CD2511F3376E100F630BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C88CD24F1F3376E100F630BE /* LaunchScreen.storyboard */; };
-		C88CD25C1F3376E100F630BE /* Social_FeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CD25B1F3376E100F630BE /* Social_FeedTests.swift */; };
-		C88CD26A1F337D0300F630BE /* InstagramRequestManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CD2691F337D0300F630BE /* InstagramRequestManagerTests.swift */; };
 		C88CD2711F337FD000F630BE /* SFInstagramRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C88CD2701F337FD000F630BE /* SFInstagramRequestManager.m */; };
 		C88CD2741F33815E00F630BE /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C88CD2731F33815E00F630BE /* Feed.storyboard */; };
 		C88CD27C1F3381FE00F630BE /* SFBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CD27B1F3381FD00F630BE /* SFBaseViewController.swift */; };
@@ -85,9 +83,7 @@
 		C88CD2501F3376E100F630BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C88CD2521F3376E100F630BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C88CD2571F3376E100F630BE /* Social FeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Social FeedTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C88CD25B1F3376E100F630BE /* Social_FeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Social_FeedTests.swift; sourceTree = "<group>"; };
 		C88CD25D1F3376E100F630BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C88CD2691F337D0300F630BE /* InstagramRequestManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramRequestManagerTests.swift; sourceTree = "<group>"; };
 		C88CD26B1F337DDD00F630BE /* Social Feed-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Social Feed-Bridging-Header.h"; sourceTree = "<group>"; };
 		C88CD26F1F337FD000F630BE /* SFInstagramRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFInstagramRequestManager.h; sourceTree = "<group>"; };
 		C88CD2701F337FD000F630BE /* SFInstagramRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFInstagramRequestManager.m; sourceTree = "<group>"; };
@@ -248,19 +244,9 @@
 		C88CD25A1F3376E100F630BE /* Social FeedTests */ = {
 			isa = PBXGroup;
 			children = (
-				C88CD2661F337B1D00F630BE /* Instagram */,
-				C88CD25B1F3376E100F630BE /* Social_FeedTests.swift */,
 				C88CD25D1F3376E100F630BE /* Info.plist */,
 			);
 			path = "Social FeedTests";
-			sourceTree = "<group>";
-		};
-		C88CD2661F337B1D00F630BE /* Instagram */ = {
-			isa = PBXGroup;
-			children = (
-				C88CD2691F337D0300F630BE /* InstagramRequestManagerTests.swift */,
-			);
-			path = Instagram;
 			sourceTree = "<group>";
 		};
 		C88CD26D1F337F5E00F630BE /* Service */ = {
@@ -847,8 +833,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C88CD26A1F337D0300F630BE /* InstagramRequestManagerTests.swift in Sources */,
-				C88CD25C1F3376E100F630BE /* Social_FeedTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
