@@ -102,6 +102,7 @@
     
 #if INSTAGRAMKIT_UICKEYCHAINSTORE
     self.keychainStore[kKeychainTokenKey] = self.accessToken;
+    NSLog(@"YESSSSS");
 #endif
     
     [[NSNotificationCenter defaultCenter] postNotificationName:InstagramKitUserAuthenticationChangedNotification object:nil];

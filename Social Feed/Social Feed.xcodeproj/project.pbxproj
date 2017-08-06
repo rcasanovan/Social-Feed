@@ -50,6 +50,9 @@
 		C88CD3091F33BEC700F630BE /* InstagramUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C88CD2FE1F33BEC700F630BE /* InstagramUser.m */; };
 		C88CD30A1F33BEC700F630BE /* UserInPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = C88CD3001F33BEC700F630BE /* UserInPhoto.m */; };
 		C88CD30C1F33C0EA00F630BE /* SFFeedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CD30B1F33C0EA00F630BE /* SFFeedListView.swift */; };
+		C8D93BF21F37184400FBC3C3 /* UICKeyChainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D93BEF1F37184400FBC3C3 /* UICKeyChainStore.m */; };
+		C8D93BF31F37184400FBC3C3 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C8D93BF01F37184400FBC3C3 /* LICENSE */; };
+		C8D93BF41F37184400FBC3C3 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C8D93BF11F37184400FBC3C3 /* README.md */; };
 		C8DB721D1F34611B00A68410 /* SFTwitterRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DB721C1F34611B00A68410 /* SFTwitterRequestManager.swift */; };
 		C8DB72201F34740000A68410 /* SFTwitterProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DB721F1F34740000A68410 /* SFTwitterProvider.swift */; };
 		C8DB72231F34918100A68410 /* SFTwitterFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DB72211F34918100A68410 /* SFTwitterFeedTableViewCell.swift */; };
@@ -146,6 +149,10 @@
 		C88CD2FF1F33BEC700F630BE /* UserInPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInPhoto.h; sourceTree = "<group>"; };
 		C88CD3001F33BEC700F630BE /* UserInPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInPhoto.m; sourceTree = "<group>"; };
 		C88CD30B1F33C0EA00F630BE /* SFFeedListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFFeedListView.swift; sourceTree = "<group>"; };
+		C8D93BEE1F37184400FBC3C3 /* UICKeyChainStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICKeyChainStore.h; sourceTree = "<group>"; };
+		C8D93BEF1F37184400FBC3C3 /* UICKeyChainStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICKeyChainStore.m; sourceTree = "<group>"; };
+		C8D93BF01F37184400FBC3C3 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		C8D93BF11F37184400FBC3C3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C8DB721C1F34611B00A68410 /* SFTwitterRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFTwitterRequestManager.swift; sourceTree = "<group>"; };
 		C8DB721F1F34740000A68410 /* SFTwitterProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFTwitterProvider.swift; sourceTree = "<group>"; };
 		C8DB72211F34918100A68410 /* SFTwitterFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFTwitterFeedTableViewCell.swift; sourceTree = "<group>"; };
@@ -223,6 +230,7 @@
 				C88CD2861F33893100F630BE /* Router */,
 				C88CD2A11F33BB2700F630BE /* Tables */,
 				C88CD2E91F33BEC700F630BE /* InstagramKit */,
+				C8D93BEB1F37184400FBC3C3 /* UICKeyChainStore */,
 				C88CD24D1F3376E100F630BE /* Assets.xcassets */,
 				C88CD24F1F3376E100F630BE /* LaunchScreen.storyboard */,
 				C88CD2521F3376E100F630BE /* Info.plist */,
@@ -517,6 +525,33 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		C8D93BEB1F37184400FBC3C3 /* UICKeyChainStore */ = {
+			isa = PBXGroup;
+			children = (
+				C8D93BEC1F37184400FBC3C3 /* Lib */,
+				C8D93BF01F37184400FBC3C3 /* LICENSE */,
+				C8D93BF11F37184400FBC3C3 /* README.md */,
+			);
+			path = UICKeyChainStore;
+			sourceTree = "<group>";
+		};
+		C8D93BEC1F37184400FBC3C3 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				C8D93BED1F37184400FBC3C3 /* UICKeyChainStore */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		C8D93BED1F37184400FBC3C3 /* UICKeyChainStore */ = {
+			isa = PBXGroup;
+			children = (
+				C8D93BEE1F37184400FBC3C3 /* UICKeyChainStore.h */,
+				C8D93BEF1F37184400FBC3C3 /* UICKeyChainStore.m */,
+			);
+			path = UICKeyChainStore;
+			sourceTree = "<group>";
+		};
 		C8DB721E1F3473E600A68410 /* Twitter Provider */ = {
 			isa = PBXGroup;
 			children = (
@@ -637,6 +672,7 @@
 			files = (
 				C88CD28B1F338CA900F630BE /* Login.storyboard in Resources */,
 				C8DB72301F36689200A68410 /* SFTwitterFeedImageTableViewCell.xib in Resources */,
+				C8D93BF31F37184400FBC3C3 /* LICENSE in Resources */,
 				C88CD29D1F33B9A200F630BE /* SFInstagramFeedTableViewCell.xib in Resources */,
 				C8DB72241F34918100A68410 /* SFTwitterFeedTableViewCell.xib in Resources */,
 				C88CD2511F3376E100F630BE /* LaunchScreen.storyboard in Resources */,
@@ -776,6 +812,7 @@
 				C88CD2C51F33BB2700F630BE /* DVATableViewModel.m in Sources */,
 				C88CD3021F33BEC700F630BE /* InstagramKitConstants.m in Sources */,
 				C88CD2A01F33B9E600F630BE /* SFFeedViewObject.swift in Sources */,
+				C8D93BF41F37184400FBC3C3 /* README.md in Sources */,
 				C8DB72201F34740000A68410 /* SFTwitterProvider.swift in Sources */,
 				C88CD2921F3390AB00F630BE /* SFInstagramLoginView.swift in Sources */,
 				C88CD27E1F33823200F630BE /* SFFeedListViewController.swift in Sources */,
@@ -789,6 +826,7 @@
 				C88CD3031F33BEC700F630BE /* InstagramComment.m in Sources */,
 				C88CD2BF1F33BB2700F630BE /* NSArray+DVAPlistModelDatasource.m in Sources */,
 				C88CD2471F3376E100F630BE /* AppDelegate.swift in Sources */,
+				C8D93BF21F37184400FBC3C3 /* UICKeyChainStore.m in Sources */,
 				C88CD2C21F33BB2700F630BE /* NSDictionary+DVATableViewModelDatasource.m in Sources */,
 				C8DB722C1F3656B200A68410 /* SFFont.swift in Sources */,
 				C8DB721D1F34611B00A68410 /* SFTwitterRequestManager.swift in Sources */,

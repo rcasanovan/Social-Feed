@@ -32,7 +32,7 @@ class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.validateInstagramSession), name: NSNotification.Name.InstagramKitUserAuthenticationChanged, object: nil)
         
-        //self.instagramProvider.instagramProviderPopularMedia()
+        validateInstragramLogged()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -61,6 +61,12 @@ class SFFeedListViewController: SFBaseViewController, SFFeedListViewDelegate {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showInstagramLogin"), object: nil, userInfo: nil)
         }
         else {
+            loadInstragramFeed()
+        }
+    }
+    
+    private func validateInstragramLogged() {
+        if (self.instagramProvider.instagramProviderIsSessionValid()) {
             loadInstragramFeed()
         }
     }

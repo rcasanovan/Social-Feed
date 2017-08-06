@@ -49,6 +49,7 @@
 }
 
 - (BOOL)isSessionValid {
+    //return self.instagramEngine.accessToken != nil && ![self.instagramEngine.accessToken isEqualToString:@""];
     return self.instagramEngine.isSessionValid;
 }
 
